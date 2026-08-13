@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Skop Tugas JTK | PTIS Daerah Baling
+  </title>
+
+
+  <!-- =====================================================
+       GOOGLE FONT
+  ====================================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =====================================================
+       GLOBAL PORTAL CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+
+  <!-- =====================================================
+       SKOP TUGAS JTK CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="css/skop-tugas-jtk.css"
+  >
+
+</head>
+
+
+
+<body class="jtk-standalone">
+
+
+<!-- =====================================================
+     PAGE HEADER
+===================================================== -->
+
+<header class="jtk-page-header">
+
+  <div class="jtk-header-inner">
+
+
+    <!-- ================= LEFT ================= -->
+
+    <div class="jtk-header-left">
+
+      <span class="jtk-header-eyebrow">
+        SKOP TUGAS & GARIS PANDUAN
+      </span>
+
+      <h1>
+        Skop Tugas JTK
+      </h1>
+
+      <p>
+        Peranan, tanggungjawab dan pengoperasian
+        Pasukan Teknikal ICT Sekolah.
+      </p>
+
+    </div>
+
+
+
+    <!-- ================= RIGHT ================= -->
+
+    <div class="jtk-header-right">
+
+
+      <!-- HALAMAN UTAMA -->
+
+      <a
+        href="index.html"
+        class="jtk-home-btn"
+        aria-label="Kembali ke Halaman Utama"
+        title="Kembali ke Halaman Utama"
+      >
+
+        <span class="jtk-home-arrow">
+          ←
+        </span>
+
+        <span>
+          Halaman Utama
+        </span>
+
+      </a>
+
+
+      <!-- STATUS SISTEM -->
+
+      <div class="jtk-header-status">
+
+        <span class="status-dot"></span>
+
+        <div>
+
+          <small>
+            SYSTEM STATUS
+          </small>
+
+          <strong>
+            ONLINE
+          </strong>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="jtk-main">
+
+
+  <!-- =====================================================
+       INTRO
+  ====================================================== -->
+
+  <section class="scope-intro">
+
+    <div class="scope-intro-content">
+
+      <span class="section-eyebrow">
+        PASUKAN TEKNIKAL ICT SEKOLAH
+      </span>
+
+      <h2>
+        Peranan & Pengoperasian
+      </h2>
+
+      <p>
+        Maklumat tugas Penyelaras Pasukan, Juruteknik Komputer
+        serta garis panduan pelaksanaan Perkhidmatan Teknikal ICT
+        Sekolah.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       TAB NAVIGATION
+  ====================================================== -->
+
+  <section class="scope-tabs">
+
+
+    <!-- PENYELARAS -->
+
+    <button
+      type="button"
+      class="scope-tab active"
+      data-tab="penyelaras"
+    >
+
+      <i data-lucide="user-round-cog"></i>
+
+      <span>
+        Penyelaras PTIS
+      </span>
+
+      <small>
+        9 Tugas Utama
+      </small>
+
+    </button>
+
+
+
+    <!-- JURUTEKNIK -->
+
+    <button
+      type="button"
+      class="scope-tab"
+      data-tab="jtk"
+    >
+
+      <i data-lucide="wrench"></i>
+
+      <span>
+        Juruteknik Komputer
+      </span>
+
+      <small>
+        4 Skop
+      </small>
+
+    </button>
+
+
+
+    <!-- GARIS PANDUAN -->
+
+    <button
+      type="button"
+      class="scope-tab"
+      data-tab="garis-panduan"
+    >
+
+      <i data-lucide="book-open-check"></i>
+
+      <span>
+        Garis Panduan
+      </span>
+
+      <small>
+        Pemusatan PTIS
+      </small>
+
+    </button>
+
+
+  </section>
+
+
+
+  <!-- =====================================================
+       TAB 01 — PENYELARAS PTIS
+  ====================================================== -->
+
+  <section
+    id="penyelaras"
+    class="scope-panel active"
+  >
+
+    <div class="section-heading">
+
+
+      <div>
+
+        <span class="section-eyebrow">
+          PENYELARAS PASUKAN
+        </span>
+
+        <h2>
+          Senarai Tugas Penyelaras PTIS
+        </h2>
+
+      </div>
+
+
+      <span class="section-count">
+        9 Bidang Tugas
+      </span>
+
+
+    </div>
+
+
+    <div
+      id="penyelarasTaskGrid"
+      class="task-grid"
+    >
+
+      <!--
+        9 TUGAS PENYELARAS
+        AKAN DIJANA OLEH JAVASCRIPT
+      -->
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       TAB 02 — JURUTEKNIK KOMPUTER
+  ====================================================== -->
+
+  <section
+    id="jtk"
+    class="scope-panel"
+  >
+
+    <div class="section-heading">
+
+
+      <div>
+
+        <span class="section-eyebrow">
+          JURUTEKNIK KOMPUTER
+        </span>
+
+        <h2>
+          Skop Perkhidmatan Teknikal ICT
+        </h2>
+
+      </div>
+
+
+      <span class="section-count">
+        4 Skop Perkhidmatan
+      </span>
+
+
+    </div>
+
+
+    <div
+      id="jtkScopeContainer"
+      class="jtk-scope-container"
+    >
+
+      <!--
+        4 SKOP PERKHIDMATAN
+        AKAN DIJANA OLEH JAVASCRIPT
+      -->
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       TAB 03 — GARIS PANDUAN
+  ====================================================== -->
+
+  <section
+    id="garis-panduan"
+    class="scope-panel"
+  >
+
+    <div class="section-heading">
+
+
+      <div>
+
+        <span class="section-eyebrow">
+          DOKUMEN RUJUKAN
+        </span>
+
+        <h2>
+          Garis Panduan Pemusatan PTIS
+        </h2>
+
+      </div>
+
+
+      <span class="section-count">
+        Kementerian Pendidikan
+      </span>
+
+
+    </div>
+
+
+    <div
+      id="guidelineContainer"
+      class="guideline-container"
+    >
+
+      <!--
+        RINGKASAN GARIS PANDUAN
+        AKAN DIJANA OLEH JAVASCRIPT
+      -->
+
+    </div>
+
+  </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     AKAN KITA MASUKKAN SELEPAS LAYOUT UTAMA SIAP
+===================================================== -->
+
+
+
+<!-- =====================================================
+     CHATBOT
+     AKAN MENGGUNAKAN KOMPONEN PTIS AI / EDCAFE
+===================================================== -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer
+  id="footer"
+  class="footer"
+>
+
+  <div class="footer-main">
+
+
+    <!-- ================= BRAND ================= -->
+
+    <div class="footer-brand">
+
+      <div class="footer-brand-header">
+
+        <div class="footer-logo">
+          PTIS
+        </div>
+
+        <div>
+
+          <strong>
+            PTIS DAERAH BALING
+          </strong>
+
+          <span>
+            Pasukan Teknikal ICT Sekolah
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <p>
+        Menyokong transformasi digital pendidikan melalui
+        pengurusan dan perkhidmatan ICT sekolah yang
+        sistematik, cekap dan berkesan.
+      </p>
+
+
+      <div class="footer-status">
+
+        <span class="status-dot"></span>
+
+        <span>
+          Semua Sistem Beroperasi
+        </span>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ================= PORTAL ================= -->
+
+    <div class="footer-column">
+
+      <h3>
+        Portal
+      </h3>
+
+      <a href="index.html">
+        Dashboard
+      </a>
+
+      <a href="organisasi.html">
+        Organisasi
+      </a>
+
+      <a href="maklumat-sekolah.html">
+        Maklumat Sekolah
+      </a>
+
+    </div>
+
+
+
+    <!-- ================= PERKHIDMATAN ================= -->
+
+    <div class="footer-column">
+
+      <h3>
+        Perkhidmatan
+      </h3>
+
+      <a href="skop-tugas-jtk.html">
+        Skop Tugas JTK
+      </a>
+
+      <a href="#">
+        Guru Penyelaras ICT
+      </a>
+
+      <a href="#">
+        Digital Forms
+      </a>
+
+      <a href="#">
+        Meja Perkhidmatan ISD
+      </a>
+
+    </div>
+
+
+
+    <!-- ================= PORTAL STATUS ================= -->
+
+    <div class="footer-column footer-info">
+
+      <h3>
+        Portal Status
+      </h3>
+
+
+      <div class="footer-status-card">
+
+        <div class="footer-status-top">
+
+          <span class="status-dot"></span>
+
+          <strong>
+            System Online
+          </strong>
+
+        </div>
+
+        <p>
+          Portal beroperasi seperti biasa.
+        </p>
+
+      </div>
+
+
+      <div class="footer-update">
+
+        <i data-lucide="clock-3"></i>
+
+        <div>
+
+          <span>
+            Kemaskini Terakhir
+          </span>
+
+          <strong id="footerLastUpdate">
+            -
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- ================= FOOTER BOTTOM ================= -->
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span id="footerYear"></span>
+      Pasukan Teknikal ICT Sekolah (PTIS)
+      Daerah Baling.
+    </p>
+
+
+    <div class="footer-bottom-right">
+
+      <span>
+        Digital ICT Support Portal
+      </span>
+
+      <span class="footer-separator">
+        •
+      </span>
+
+      <span>
+        PTIS Smart Portal 2026
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =====================================================
+     LUCIDE ICONS
+===================================================== -->
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+<!-- =====================================================
+     GLOBAL PAGE SCRIPT
+===================================================== -->
+
+<script>
+
+  /* ================= LUCIDE ICONS ================= */
+
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+
+
+  /* ================= CURRENT DATE ================= */
+
+  const currentDate =
+    document.getElementById("currentDate");
+
+  if (currentDate) {
+
+    const today = new Date();
+
+    currentDate.textContent =
+      today.toLocaleDateString(
+        "ms-MY",
+        {
+          day: "2-digit",
+          month: "short",
+          year: "numeric"
+        }
+      );
+
+  }
+
+
+  /* ================= FOOTER YEAR ================= */
+
+  const footerYear =
+    document.getElementById("footerYear");
+
+  if (footerYear) {
+
+    footerYear.textContent =
+      new Date().getFullYear();
+
+  }
+
+
+  /* ================= FOOTER LAST UPDATE ================= */
+
+  const footerLastUpdate =
+    document.getElementById("footerLastUpdate");
+
+  if (footerLastUpdate) {
+
+    const today = new Date();
+
+    footerLastUpdate.textContent =
+      today.toLocaleDateString(
+        "ms-MY",
+        {
+          day: "2-digit",
+          month: "short",
+          year: "numeric"
+        }
+      );
+
+  }
+
+</script>
+
+
+
+<!-- =====================================================
+     PAGE JAVASCRIPT
+===================================================== -->
+
+<script
+  src="js/skop-tugas-jtk.js"
+></script>
+
+
+</body>
+
+</html>

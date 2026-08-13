@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Portal Rasmi Pasukan Teknikal ICT Sekolah (PTIS) Daerah Baling"
+  >
+
+  <title>
+    Portal Rasmi PTIS Daerah Baling
+  </title>
+
+
+  <!-- ================= GOOGLE FONT ================= -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- ================= LUCIDE ICONS ================= -->
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+
+  <!-- ================= MAIN CSS ================= -->
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     MOBILE OVERLAY
+===================================================== -->
+
+<div
+  id="sidebarOverlay"
+  class="sidebar-overlay"
+></div>
+
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside
+  id="sidebar"
+  class="sidebar"
+>
+
+
+  <!-- ================= BRAND ================= -->
+
+  <div class="sidebar-brand">
+
+    <div class="brand-logo">
+
+      <span>
+        PTIS
+      </span>
+
+    </div>
+
+
+    <div class="brand-text">
+
+      <strong>
+        PTIS
+      </strong>
+
+      <span>
+        Daerah Baling
+      </span>
+
+      <small>
+        Digital ICT Support Portal
+      </small>
+
+    </div>
+
+  </div>
+
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="sidebar-nav">
+
+
+  <!-- =================================================
+       MENU UTAMA
+  ================================================== -->
+
+  <div class="nav-group">
+
+    <span class="nav-label">
+      MENU UTAMA
+    </span>
+
+
+    <!-- DASHBOARD -->
+
+    <a
+      href="index.html"
+      class="nav-link active"
+    >
+
+      <i data-lucide="layout-dashboard"></i>
+
+      <span>
+        Dashboard
+      </span>
+
+    </a>
+
+
+    <!-- ORGANISASI -->
+
+    <a
+      href="organisasi.html"
+      class="nav-link"
+    >
+
+      <i data-lucide="building-2"></i>
+
+      <span>
+        Organisasi
+      </span>
+
+    </a>
+
+
+    <!-- MAKLUMAT SEKOLAH -->
+
+    <a
+      href="maklumat-sekolah.html"
+      class="nav-link"
+    >
+
+      <i data-lucide="school"></i>
+
+      <span>
+        Maklumat Sekolah
+      </span>
+
+    </a>
+
+  </div>
+
+
+
+  <!-- =================================================
+       PERKHIDMATAN
+  ================================================== -->
+
+  <div class="nav-group">
+
+    <span class="nav-label">
+      PERKHIDMATAN
+    </span>
+
+
+    <!-- SKOP TUGAS JTK -->
+
+    <a
+  href="skop-tugas-jtk.html"
+  class="nav-link"
+>
+  <i data-lucide="clipboard-list"></i>
+
+  <span>
+    Skop Tugas JTK
+  </span>
+</a>
+
+
+    <!-- GURU PENYELARAS ICT -->
+
+    <a
+      href="#"
+      class="nav-link"
+    >
+
+      <i data-lucide="user-cog"></i>
+
+      <span>
+        Guru Penyelaras ICT
+      </span>
+
+    </a>
+
+
+    <!-- DIGITAL FORMS -->
+
+    <a
+      href="#"
+      class="nav-link"
+    >
+
+      <i data-lucide="file-text"></i>
+
+      <span>
+        Digital Forms
+      </span>
+
+    </a>
+
+
+    <!-- MEJA PERKHIDMATAN ISD -->
+
+    <a
+      href="#"
+      class="nav-link"
+    >
+
+      <i data-lucide="headphones"></i>
+
+      <span>
+        Meja Perkhidmatan ISD
+      </span>
+
+    </a>
+
+
+    <!-- MAKLUMAT PERHUBUNGAN -->
+
+    <a
+      href="#"
+      class="nav-link"
+    >
+
+      <i data-lucide="contact"></i>
+
+      <span>
+        Maklumat Perhubungan
+      </span>
+
+    </a>
+
+  </div>
+
+
+</nav>
+
+
+
+  <!-- ================= SIDEBAR FOOTER ================= -->
+
+  <div class="sidebar-footer">
+
+    <div class="sidebar-status">
+
+      <span class="status-dot"></span>
+
+      <div>
+
+        <small>
+          PORTAL STATUS
+        </small>
+
+        <strong>
+          Online
+        </strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN WRAPPER
+===================================================== -->
+
+<div class="main-wrapper">
+
+
+  <!-- ===================================================
+       TOP HEADER
+  ==================================================== -->
+
+  <header class="top-header">
+
+
+    <!-- LEFT -->
+
+    <div class="header-left">
+
+
+      <!-- MOBILE MENU -->
+
+      <button
+        id="menuButton"
+        class="menu-button"
+        type="button"
+        aria-label="Buka menu"
+      >
+
+        <i data-lucide="menu"></i>
+
+      </button>
+
+
+      <div class="page-title">
+
+        <span>
+          PUSAT KAWALAN UTAMA
+        </span>
+
+        <h1>
+          Dashboard
+        </h1>
+
+        <p>
+          Portal Rasmi Pasukan Teknikal ICT Sekolah
+          Daerah Baling
+        </p>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- RIGHT -->
+
+    <div class="header-right">
+
+
+      <div class="header-status">
+
+        <span class="status-dot"></span>
+
+        <div>
+
+          <small>
+            SYSTEM STATUS
+          </small>
+
+          <strong>
+            ONLINE
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="header-divider"></div>
+
+
+      <div class="header-date">
+
+        <i data-lucide="calendar-days"></i>
+
+        <div>
+
+          <small>
+            HARI INI
+          </small>
+
+          <strong id="currentDate">
+            -
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </header>
+
+
+
+  <!-- ===================================================
+       MAIN CONTENT
+  ==================================================== -->
+
+  <main class="main-content">
+
+
+    <!-- ===============================================
+         HERO
+    ================================================ -->
+
+    <section
+  id="heroSection"
+  class="page-section hero-section"
+>
+
+  <div class="hero-container">
+
+
+    <!-- ================= LEFT CONTENT ================= -->
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+
+        <i data-lucide="sparkles"></i>
+
+        <span>
+          PTIS SMART DIGITAL PORTAL
+        </span>
+
+      </div>
+
+
+      <h2 class="hero-title">
+
+        Transformasi Digital
+
+        <span>
+          Bermula Di Sini
+        </span>
+
+      </h2>
+
+
+      <h3 class="hero-subtitle">
+
+        Portal Rasmi PTIS
+        <br>
+        Daerah Baling
+
+      </h3>
+
+
+      <p class="hero-description">
+
+        Menghubungkan sekolah, perkhidmatan ICT dan sumber
+        digital melalui satu portal yang lebih pantas,
+        mudah dan sistematik.
+
+      </p>
+
+
+      <div class="hero-actions">
+
+        <a
+          href="#userAccessSection"
+          class="hero-button hero-button-primary"
+        >
+
+          <i data-lucide="send"></i>
+
+          <span>
+            Terokai Portal
+          </span>
+
+        </a>
+
+
+        <a
+          href="#"
+          class="hero-button hero-button-secondary"
+        >
+
+          <i data-lucide="headphones"></i>
+
+          <span>
+            Kenali PTIS
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ================= CONNECTED SCHOOLS ================= -->
+
+    <div class="hero-network">
+
+
+      <!-- CLOUD -->
+
+      <div class="network-cloud">
+
+        <i data-lucide="cloud"></i>
+
+      </div>
+
+
+
+      <!-- SCHOOL A -->
+
+      <div class="network-school school-a">
+
+        <div class="school-icon">
+
+          <i data-lucide="school"></i>
+
+        </div>
+
+        <span>
+          SEKOLAH A
+        </span>
+
+      </div>
+
+
+
+      <!-- SCHOOL B -->
+
+      <div class="network-school school-b">
+
+        <div class="school-icon">
+
+          <i data-lucide="school"></i>
+
+        </div>
+
+        <span>
+          SEKOLAH B
+        </span>
+
+      </div>
+
+
+
+      <!-- CONNECTION LINES -->
+
+      <span class="network-line line-a"></span>
+
+      <span class="network-line line-b"></span>
+
+      <span class="network-line line-cloud"></span>
+
+      <span class="network-line line-device-left"></span>
+
+      <span class="network-line line-device-right"></span>
+
+
+
+      <!-- CENTRAL PTIS -->
+
+      <div class="network-center">
+
+        <div class="network-center-ring">
+
+          <div class="network-center-content">
+
+            <strong>
+              PTIS
+            </strong>
+
+            <span>
+              Daerah Baling
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <span class="network-node node-1"></span>
+        <span class="network-node node-2"></span>
+        <span class="network-node node-3"></span>
+        <span class="network-node node-4"></span>
+
+      </div>
+
+
+
+      <!-- DEVICE LEFT -->
+
+      <div class="network-device device-left">
+
+        <i data-lucide="laptop"></i>
+
+      </div>
+
+
+
+      <!-- DEVICE RIGHT -->
+
+      <div class="network-device device-right">
+
+        <i data-lucide="tablet-smartphone"></i>
+
+      </div>
+
+
+      <!-- WIFI DECORATION -->
+
+      <div class="network-wifi wifi-1">
+        <i data-lucide="wifi"></i>
+      </div>
+
+      <div class="network-wifi wifi-2">
+        <i data-lucide="wifi"></i>
+      </div>
+
+      <div class="network-wifi wifi-3">
+        <i data-lucide="wifi"></i>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+    <!-- ===============================================
+     ANNOUNCEMENT CENTER
+================================================ -->
+
+<section
+  id="announcementSection"
+  class="page-section announcement-section"
+>
+
+  <div class="section-header">
+
+    <div>
+
+      <span class="section-eyebrow">
+        INFO TERKINI
+      </span>
+
+      <h2>
+        Makluman & Pengumuman
+      </h2>
+
+      <p>
+        Informasi terkini berkaitan portal,
+        perkhidmatan dan aktiviti PTIS.
+      </p>
+
+    </div>
+
+
+    <a
+      href="#"
+      class="section-link"
+    >
+
+      Lihat Semua
+
+      <i data-lucide="arrow-right"></i>
+
+    </a>
+
+  </div>
+
+
+  <div class="announcement-list">
+
+
+    <!-- ANNOUNCEMENT 1 -->
+
+    <article class="announcement-card">
+
+      <div class="announcement-date">
+
+        <strong>
+          12
+        </strong>
+
+        <span>
+          OGO
+        </span>
+
+      </div>
+
+
+      <div class="announcement-content">
+
+        <div class="announcement-meta">
+
+          <span class="announcement-badge badge-blue">
+            PENGUMUMAN
+          </span>
+
+          <span>
+            PORTAL PTIS
+          </span>
+
+        </div>
+
+
+        <h3>
+          Naik Taraf Portal PTIS 2026
+        </h3>
+
+
+        <p>
+          Portal PTIS kini melalui proses peningkatan
+          sistem dan pengalaman pengguna bagi menyediakan
+          capaian maklumat yang lebih pantas dan mesra pengguna.
+        </p>
+
+      </div>
+
+
+      <button
+        class="announcement-arrow"
+        type="button"
+        aria-label="Lihat makluman"
+      >
+
+        <i data-lucide="chevron-right"></i>
+
+      </button>
+
+    </article>
+
+
+
+    <!-- ANNOUNCEMENT 2 -->
+
+    <article class="announcement-card">
+
+      <div class="announcement-date">
+
+        <strong>
+          10
+        </strong>
+
+        <span>
+          OGO
+        </span>
+
+      </div>
+
+
+      <div class="announcement-content">
+
+        <div class="announcement-meta">
+
+          <span class="announcement-badge badge-green">
+            INFO ICT
+          </span>
+
+          <span>
+            PERKHIDMATAN
+          </span>
+
+        </div>
+
+
+        <h3>
+          Makluman Perkhidmatan ICT Sekolah
+        </h3>
+
+
+        <p>
+          Sebarang laporan berkaitan peralatan,
+          rangkaian atau perkhidmatan ICT boleh disalurkan
+          melalui Meja Perkhidmatan ISD.
+        </p>
+
+      </div>
+
+
+      <button
+        class="announcement-arrow"
+        type="button"
+        aria-label="Lihat makluman"
+      >
+
+        <i data-lucide="chevron-right"></i>
+
+      </button>
+
+    </article>
+
+
+
+    <!-- ANNOUNCEMENT 3 -->
+
+    <article class="announcement-card">
+
+      <div class="announcement-date">
+
+        <strong>
+          08
+        </strong>
+
+        <span>
+          OGO
+        </span>
+
+      </div>
+
+
+      <div class="announcement-content">
+
+        <div class="announcement-meta">
+
+          <span class="announcement-badge badge-orange">
+            HEBAHAN
+          </span>
+
+          <span>
+            KESELAMATAN ICT
+          </span>
+
+        </div>
+
+
+        <h3>
+          Keselamatan Siber Sekolah
+        </h3>
+
+
+        <p>
+          Warga sekolah disaran sentiasa mengamalkan
+          penggunaan kata laluan yang selamat serta
+          berwaspada terhadap pautan dan e-mel mencurigakan.
+        </p>
+
+      </div>
+
+
+      <button
+        class="announcement-arrow"
+        type="button"
+        aria-label="Lihat makluman"
+      >
+
+        <i data-lucide="chevron-right"></i>
+
+      </button>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+    <!-- ===============================================
+     QUICK ACCESS
+================================================ -->
+
+<section
+  id="servicesSection"
+  class="page-section quick-access-section"
+>
+
+  <div class="section-header">
+
+    <div>
+
+      <span class="section-eyebrow">
+        PAUTAN PANTAS
+      </span>
+
+      <h2>
+        Akses Portal & Perkhidmatan Rasmi
+      </h2>
+
+      <p>
+        Capaian pantas ke platform dan perkhidmatan
+        digital yang sering digunakan.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="quick-access-grid">
+
+
+    <!-- KPM -->
+
+    <a href="#" class="quick-access-card">
+
+      <div class="quick-access-icon blue">
+        <i data-lucide="landmark"></i>
+      </div>
+
+      <div class="quick-access-content">
+
+        <strong>
+          KPM
+        </strong>
+
+        <span>
+          Kementerian Pendidikan
+        </span>
+
+      </div>
+
+      <i
+        data-lucide="arrow-up-right"
+        class="quick-access-arrow"
+      ></i>
+
+    </a>
+
+
+    <!-- JPN KEDAH -->
+
+    <a href="#" class="quick-access-card">
+
+      <div class="quick-access-icon cyan">
+        <i data-lucide="building-2"></i>
+      </div>
+
+      <div class="quick-access-content">
+
+        <strong>
+          JPN Kedah
+        </strong>
+
+        <span>
+          Jabatan Pendidikan Negeri Kedah
+        </span>
+
+      </div>
+
+      <i
+        data-lucide="arrow-up-right"
+        class="quick-access-arrow"
+      ></i>
+
+    </a>
+
+
+    <!-- DELIMA -->
+
+    <a href="#" class="quick-access-card">
+
+      <div class="quick-access-icon yellow">
+        <i data-lucide="laptop"></i>
+      </div>
+
+      <div class="quick-access-content">
+
+        <strong>
+          DELIMa
+        </strong>
+
+        <span>
+          Digital Educational Learning Initiative
+        </span>
+
+      </div>
+
+      <i
+        data-lucide="arrow-up-right"
+        class="quick-access-arrow"
+      ></i>
+
+    </a>
+
+
+    <!-- HRMIS -->
+
+    <a href="#" class="quick-access-card">
+
+      <div class="quick-access-icon green">
+        <i data-lucide="users-round"></i>
+      </div>
+
+      <div class="quick-access-content">
+
+        <strong>
+          HRMIS
+        </strong>
+
+        <span>
+          Human Resource Management
+        </span>
+
+      </div>
+
+      <i
+        data-lucide="arrow-up-right"
+        class="quick-access-arrow"
+      ></i>
+
+    </a>
+
+
+    <!-- MYGOVUC -->
+
+    <a href="#" class="quick-access-card">
+
+      <div class="quick-access-icon purple">
+        <i data-lucide="mail"></i>
+      </div>
+
+      <div class="quick-access-content">
+
+        <strong>
+          MyGovUC
+        </strong>
+
+        <span>
+          Perkhidmatan Komunikasi Kerajaan
+        </span>
+
+      </div>
+
+      <i
+        data-lucide="arrow-up-right"
+        class="quick-access-arrow"
+      ></i>
+
+    </a>
+
+
+    <!-- ISD -->
+
+    <a href="#" class="quick-access-card">
+
+      <div class="quick-access-icon rose">
+        <i data-lucide="headphones"></i>
+      </div>
+
+      <div class="quick-access-content">
+
+        <strong>
+          ISD
+        </strong>
+
+        <span>
+          Meja Perkhidmatan ICT
+        </span>
+
+      </div>
+
+      <i
+        data-lucide="arrow-up-right"
+        class="quick-access-arrow"
+      ></i>
+
+    </a>
+
+
+    <!-- USTP -->
+
+    <a href="#" class="quick-access-card">
+
+      <div class="quick-access-icon blue">
+        <i data-lucide="cpu"></i>
+      </div>
+
+      <div class="quick-access-content">
+
+        <strong>
+          USTP
+        </strong>
+
+        <span>
+          Unit Sumber & Teknologi Pendidikan
+        </span>
+
+      </div>
+
+      <i
+        data-lucide="arrow-up-right"
+        class="quick-access-arrow"
+      ></i>
+
+    </a>
+
+
+    <!-- EDU BALING -->
+
+    <a href="#" class="quick-access-card">
+
+      <div class="quick-access-icon cyan">
+        <i data-lucide="box"></i>
+      </div>
+
+      <div class="quick-access-content">
+
+        <strong>
+          Edu Baling 3D Printer
+        </strong>
+
+        <span>
+          Portal Pendidikan 3D Printing
+        </span>
+
+      </div>
+
+      <i
+        data-lucide="arrow-up-right"
+        class="quick-access-arrow"
+      ></i>
+
+    </a>
+
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ===================================================
+     FOOTER
+==================================================== -->
+
+
+<footer
+  id="footer"
+  class="footer"
+>
+
+
+  <div class="footer-main">
+
+
+
+    <!-- ================= BRAND ================= -->
+
+
+    <div class="footer-brand">
+
+
+      <div class="footer-brand-header">
+
+
+        <div class="footer-logo">
+          PTIS
+        </div>
+
+
+        <div>
+
+
+          <strong>
+            PTIS DAERAH BALING
+          </strong>
+
+
+          <span>
+            Pasukan Teknikal ICT Sekolah
+          </span>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <p>
+        Menyokong transformasi digital pendidikan melalui
+        pengurusan dan perkhidmatan ICT sekolah yang
+        sistematik, cekap dan berkesan.
+      </p>
+
+
+
+      <div class="footer-status">
+
+
+        <span class="status-dot"></span>
+
+
+        <span>
+          Semua Sistem Beroperasi
+        </span>
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+    <!-- ================= PORTAL ================= -->
+
+
+    <div class="footer-column">
+
+
+      <h3>
+        Portal
+      </h3>
+
+
+      <a href="index.html">
+        Dashboard
+      </a>
+
+
+      <a href="organisasi.html">
+        Organisasi
+      </a>
+
+
+      <a href="maklumat-sekolah.html">
+        Maklumat Sekolah
+      </a>
+
+
+      <a href="organisasi.html#pasukan">
+        Ahli Pasukan
+      </a>
+
+
+    </div>
+
+
+
+
+    <!-- ================= SERVICES ================= -->
+
+
+    <div class="footer-column">
+
+
+      <h3>
+        Perkhidmatan
+      </h3>
+
+
+      <a href="skop-tugas-jtk.html">
+        Skop Tugas JTK
+      </a>
+
+
+      <a href="peranan-guru-penyelaras-ict.html">
+        Guru Penyelaras ICT
+      </a>
+
+
+      <a href="kabinet-borang.html">
+        Digital Forms
+      </a>
+
+
+      <a href="meja-perkhidmatan-isd.html">
+        Meja Perkhidmatan ISD
+      </a>
+
+
+    </div>
+
+
+
+
+    <!-- ================= PORTAL INFO ================= -->
+
+
+    <div class="footer-column footer-info">
+
+
+      <h3>
+        Portal Status
+      </h3>
+
+
+
+      <div class="footer-status-card">
+
+
+        <div class="footer-status-top">
+
+
+          <span class="status-dot"></span>
+
+
+          <strong>
+            System Online
+          </strong>
+
+
+        </div>
+
+
+        <p>
+          Portal beroperasi seperti biasa.
+        </p>
+
+
+      </div>
+
+
+
+      <div class="footer-update">
+
+
+        <i data-lucide="clock-3"></i>
+
+
+        <div>
+
+
+          <span>
+            Kemaskini Terakhir
+          </span>
+
+
+          <strong id="footerLastUpdate">
+            -
+          </strong>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+
+  <!-- ================= FOOTER BOTTOM ================= -->
+
+
+  <div class="footer-bottom">
+
+
+    <p>
+      © <span id="footerYear"></span>
+      Pasukan Teknikal ICT Sekolah (PTIS) Daerah Baling.
+    </p>
+
+
+    <div class="footer-bottom-right">
+
+
+      <span>
+        Digital ICT Support Portal
+      </span>
+
+
+      <span class="footer-separator">
+        •
+      </span>
+
+
+      <span>
+        PTIS Smart Portal 2026
+      </span>
+
+
+    </div>
+
+
+  </div>
+
+
+</footer>
+
+
+
+</div>
+
+
+
+<!-- =====================================================
+     PTIS AI ASSISTANT
+===================================================== -->
+
+<div
+  id="chatbotContainer"
+  class="chatbot-container"
+>
+
+
+  <!-- ===================================================
+       CHAT PANEL
+  ==================================================== -->
+
+  <div
+    id="chatPanel"
+    class="chat-panel"
+    aria-hidden="true"
+  >
+
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="chat-header">
+
+      <div class="chat-header-left">
+
+        <div class="chat-avatar">
+
+          <i data-lucide="bot"></i>
+
+          <span class="chat-online-dot"></span>
+
+        </div>
+
+
+        <div class="chat-header-info">
+
+          <strong>
+            PTIS AI Assistant
+          </strong>
+
+          <span>
+            Pembantu Digital PTIS
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <button
+        id="chatCloseButton"
+        class="chat-close-button"
+        type="button"
+        aria-label="Tutup PTIS AI Assistant"
+      >
+
+        <i data-lucide="x"></i>
+
+      </button>
+
+    </div>
+
+
+
+    <!-- ================= STATUS BAR ================= -->
+
+    <div class="chat-status-bar">
+
+      <span class="chat-status-dot"></span>
+
+      <span>
+        Sistem sedia membantu
+      </span>
+
+    </div>
+
+
+
+    <!-- ================= MESSAGES ================= -->
+
+    <div
+      id="chatMessages"
+      class="chat-messages"
+    >
+
+
+      <!-- AI WELCOME MESSAGE -->
+
+      <div class="chat-message chat-message-ai">
+
+        <div class="message-avatar">
+
+          <i data-lucide="bot"></i>
+
+        </div>
+
+
+        <div class="message-content">
+
+          <div class="message-bubble">
+
+            <strong>
+              Selamat datang! 👋
+            </strong>
+
+            <p>
+              Saya PTIS AI Assistant. Saya boleh membantu
+              anda mendapatkan maklumat berkaitan portal
+              dan perkhidmatan PTIS Daerah Baling.
+            </p>
+
+          </div>
+
+
+          <span class="message-time">
+            PTIS AI
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- QUICK QUESTIONS -->
+
+      <div class="chat-suggestions">
+
+        <span class="chat-suggestions-title">
+          Cuba pertanyaan:
+        </span>
+
+
+        <button
+          type="button"
+          class="chat-suggestion"
+          data-question="Apakah fungsi PTIS?"
+        >
+
+          <i data-lucide="circle-help"></i>
+
+          Apakah fungsi PTIS?
+
+        </button>
+
+
+        <button
+          type="button"
+          class="chat-suggestion"
+          data-question="Bagaimana saya mendapatkan bantuan ICT?"
+        >
+
+          <i data-lucide="headphones"></i>
+
+          Bantuan ICT
+
+        </button>
+
+
+        <button
+          type="button"
+          class="chat-suggestion"
+          data-question="Di mana saya boleh mendapatkan Digital Forms?"
+        >
+
+          <i data-lucide="files"></i>
+
+          Digital Forms
+
+        </button>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- ================= INPUT ================= -->
+
+    <div class="chat-input-area">
+
+      <form
+        id="chatForm"
+        class="chat-form"
+      >
+
+        <div class="chat-input-wrapper">
+
+          <input
+            id="chatInput"
+            type="text"
+            placeholder="Taip pertanyaan anda..."
+            autocomplete="off"
+            aria-label="Pertanyaan kepada PTIS AI Assistant"
+          >
+
+
+          <button
+            id="chatSendButton"
+            class="chat-send-button"
+            type="submit"
+            aria-label="Hantar pertanyaan"
+          >
+
+            <i data-lucide="send"></i>
+
+          </button>
+
+        </div>
+
+      </form>
+
+
+      <p class="chat-disclaimer">
+        PTIS AI Assistant • Digital ICT Support
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- ===================================================
+       FLOATING CHAT BUTTON
+  ==================================================== -->
+
+  <button
+    id="chatButton"
+    class="chat-floating-button"
+    type="button"
+    aria-label="Buka PTIS AI Assistant"
+    aria-expanded="false"
+  >
+
+
+    <div class="chat-floating-icon">
+
+      <i data-lucide="bot"></i>
+
+      <span class="floating-online-dot"></span>
+
+    </div>
+
+
+    <div class="chat-floating-text">
+
+      <strong>
+        Perlukan bantuan?
+      </strong>
+
+      <span>
+        Klik untuk bertanya
+      </span>
+
+    </div>
+
+
+    <i
+      data-lucide="message-circle"
+      class="chat-floating-arrow"
+    ></i>
+
+
+  </button>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     MAIN JAVASCRIPT
+===================================================== -->
+
+<script src="js/app.js"></script>
+
+
+<script>
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+      if (window.lucide) {
+
+        lucide.createIcons();
+
+      }
+
+    }
+  );
+
+</script>
+
+
+</body>
+
+</html>

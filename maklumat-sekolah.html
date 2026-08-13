@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Maklumat Sekolah | PTIS Daerah Baling
+  </title>
+
+  <!-- =========================================
+       GOOGLE FONT
+  ========================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =========================================
+       PAGE CSS
+  ========================================== -->
+
+  <link
+    rel="stylesheet"
+    href="css/maklumat-sekolah.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PAGE HEADER
+====================================================== -->
+
+<header class="school-page-header">
+
+  <div class="school-header-inner">
+
+    <div>
+
+      <span class="school-eyebrow">
+        DIREKTORI SEKOLAH
+      </span>
+
+      <h1>
+        Maklumat Sekolah Daerah Baling
+      </h1>
+
+      <p>
+        Direktori rasmi maklumat sekolah di bawah
+        Pasukan Teknikal ICT Sekolah Daerah Baling.
+      </p>
+
+    </div>
+
+    <div class="school-header-actions">
+
+  <!-- HALAMAN UTAMA -->
+
+  <a
+    href="index.html"
+    class="school-home-btn"
+    title="Kembali ke Halaman Utama"
+  >
+
+    <span class="home-btn-icon">
+      ←
+    </span>
+
+    <span>
+      Halaman Utama
+    </span>
+
+  </a>
+
+
+  <!-- STATUS SISTEM -->
+
+  <div class="school-header-badge">
+
+    <span class="status-dot"></span>
+
+    <div>
+      <small>STATUS SISTEM</small>
+      <strong>ONLINE</strong>
+    </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main class="school-main">
+
+
+  <!-- =================================================
+       INTRO
+  ================================================== -->
+
+  <section class="school-hero">
+
+    <span class="section-label">
+      PUSAT MAKLUMAT SEKOLAH
+    </span>
+
+    <h2>
+      Direktori Sekolah
+    </h2>
+
+    <p>
+      Cari maklumat sekolah, pentadbir,
+      Guru Penyelaras ICT dan penyeliaan
+      Pasukan Teknikal ICT Sekolah.
+    </p>
+
+  </section>
+
+
+
+  <!-- =================================================
+       STATISTICS
+  ================================================== -->
+
+  <section class="school-stat-grid">
+
+
+    <article class="school-stat-card stat-total">
+
+      <div class="stat-icon">
+        🏫
+      </div>
+
+      <div>
+
+        <strong id="totalSchools">
+          3
+        </strong>
+
+        <span>
+          Jumlah Sekolah
+        </span>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="school-stat-card stat-primary">
+
+      <div class="stat-icon">
+        📘
+      </div>
+
+      <div>
+
+        <strong id="totalPrimarySchools">
+          2
+        </strong>
+
+        <span>
+          Sekolah Rendah
+        </span>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="school-stat-card stat-secondary">
+
+      <div class="stat-icon">
+        🎓
+      </div>
+
+      <div>
+
+        <strong id="totalSecondarySchools">
+          1
+        </strong>
+
+        <span>
+          Sekolah Menengah
+        </span>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="school-stat-card stat-zone">
+
+      <div class="stat-icon">
+        👥
+      </div>
+
+      <div>
+
+        <strong>
+          3
+        </strong>
+
+        <span>
+          Zon PTIS
+        </span>
+
+      </div>
+
+    </article>
+
+
+  </section>
+
+
+
+  <!-- =================================================
+       SEARCH / FILTER
+  ================================================== -->
+
+  <section class="school-toolbar">
+
+
+    <div class="school-search">
+
+      <span class="search-icon">
+        ⌕
+      </span>
+
+      <input
+        type="search"
+        id="schoolSearch"
+        placeholder="Cari nama sekolah, kod sekolah, PGB atau Guru ICT..."
+        autocomplete="off"
+      >
+
+    </div>
+
+
+
+    <div class="school-filter">
+
+      <button
+        type="button"
+        class="filter-btn active"
+        data-filter="all"
+      >
+        Semua
+      </button>
+
+      <button
+        type="button"
+        class="filter-btn"
+        data-filter="RENDAH"
+      >
+        Sekolah Rendah
+      </button>
+
+      <button
+        type="button"
+        class="filter-btn"
+        data-filter="MENENGAH"
+      >
+        Sekolah Menengah
+      </button>
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =================================================
+       RESULT INFORMATION
+  ================================================== -->
+
+  <section class="school-result-header">
+
+    <div>
+
+      <span class="section-label">
+        SENARAI SEKOLAH
+      </span>
+
+      <h3>
+        Semua Sekolah
+      </h3>
+
+    </div>
+
+
+    <div class="school-result-count">
+
+      <strong id="visibleSchoolCount">
+        3
+      </strong>
+
+      <span>
+        sekolah dipaparkan
+      </span>
+
+    </div>
+
+  </section>
+
+
+    <!-- =================================================
+       SCHOOL GRID
+       DIJANA OLEH maklumat-sekolah.js
+  ================================================== -->
+
+  <section
+    class="school-grid"
+    id="schoolGrid"
+  >
+  </section>
+
+
+
+  <!-- =================================================
+       EMPTY STATE
+  ================================================== -->
+
+  <section
+    class="school-empty"
+    id="schoolEmpty"
+    hidden
+  >
+
+    <div class="empty-icon">
+      🔎
+    </div>
+
+    <h3>
+      Sekolah tidak ditemui
+    </h3>
+
+    <p>
+      Cuba gunakan nama sekolah atau
+      kod sekolah yang lain.
+    </p>
+
+  </section>
+
+
+</main>
+
+
+
+<!-- ===================================================
+     FOOTER
+==================================================== -->
+
+<footer
+  id="footer"
+  class="footer"
+>
+
+  <div class="footer-main">
+
+
+    <!-- ================= BRAND ================= -->
+
+    <div class="footer-brand">
+
+      <div class="footer-brand-header">
+
+        <div class="footer-logo">
+          PTIS
+        </div>
+
+        <div>
+
+          <strong>
+            PTIS DAERAH BALING
+          </strong>
+
+          <span>
+            Pasukan Teknikal ICT Sekolah
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <p>
+        Menyokong transformasi digital pendidikan melalui
+        pengurusan dan perkhidmatan ICT sekolah yang
+        sistematik, cekap dan berkesan.
+      </p>
+
+
+      <div class="footer-status">
+
+        <span class="status-dot"></span>
+
+        <span>
+          Semua Sistem Beroperasi
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= PORTAL ================= -->
+
+    <div class="footer-column">
+
+      <h3>
+        Portal
+      </h3>
+
+      <a href="index.html">
+        Dashboard
+      </a>
+
+      <a href="organisasi.html">
+        Organisasi
+      </a>
+
+      <a
+        href="maklumat-sekolah.html"
+        class="footer-link-active"
+      >
+        Maklumat Sekolah
+      </a>
+
+    </div>
+
+
+    <!-- ================= PERKHIDMATAN ================= -->
+
+    <div class="footer-column">
+
+      <h3>
+        Perkhidmatan
+      </h3>
+
+      <a href="#">
+        Skop Tugas JTK
+      </a>
+
+      <a href="#">
+        Guru Penyelaras ICT
+      </a>
+
+      <a href="#">
+        Digital Forms
+      </a>
+
+      <a href="#">
+        Meja Perkhidmatan ISD
+      </a>
+
+    </div>
+
+
+    <!-- ================= PORTAL STATUS ================= -->
+
+    <div class="footer-column footer-info">
+
+      <h3>
+        Portal Status
+      </h3>
+
+
+      <div class="footer-status-card">
+
+        <div class="footer-status-top">
+
+          <span class="status-dot"></span>
+
+          <strong>
+            System Online
+          </strong>
+
+        </div>
+
+        <p>
+          Portal beroperasi seperti biasa.
+        </p>
+
+      </div>
+
+
+      <div class="footer-update">
+
+        <i data-lucide="clock-3"></i>
+
+        <div>
+
+          <span>
+            Kemaskini Terakhir
+          </span>
+
+          <strong id="footerLastUpdate">
+            -
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= FOOTER BOTTOM ================= -->
+
+  <div class="footer-bottom">
+
+    <p>
+      © <span id="footerYear"></span>
+      Pasukan Teknikal ICT Sekolah (PTIS)
+      Daerah Baling.
+    </p>
+
+
+    <div class="footer-bottom-right">
+
+      <span>
+        Digital ICT Support Portal
+      </span>
+
+      <span class="footer-separator">
+        •
+      </span>
+
+      <span>
+        PTIS Smart Portal 2026
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- =====================================================
+     PTIS AI ASSISTANT
+===================================================== -->
+
+<div
+  id="chatbotContainer"
+  class="chatbot-container"
+>
+
+
+  <div
+    id="chatPanel"
+    class="chat-panel"
+    aria-hidden="true"
+  >
+
+
+    <div class="chat-header">
+
+      <div class="chat-header-left">
+
+        <div class="chat-avatar">
+
+          <i data-lucide="bot"></i>
+
+          <span class="chat-online-dot"></span>
+
+        </div>
+
+
+        <div class="chat-header-info">
+
+          <strong>
+            PTIS AI Assistant
+          </strong>
+
+          <span>
+            Pembantu Digital PTIS
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <button
+        id="chatCloseButton"
+        class="chat-close-button"
+        type="button"
+        aria-label="Tutup PTIS AI Assistant"
+      >
+
+        <i data-lucide="x"></i>
+
+      </button>
+
+    </div>
+
+
+
+    <div class="chat-status-bar">
+
+      <span class="chat-status-dot"></span>
+
+      <span>
+        Sistem sedia membantu
+      </span>
+
+    </div>
+
+
+
+    <div
+      id="chatMessages"
+      class="chat-messages"
+    >
+
+
+      <div class="chat-message chat-message-ai">
+
+        <div class="message-avatar">
+
+          <i data-lucide="bot"></i>
+
+        </div>
+
+
+        <div class="message-content">
+
+          <div class="message-bubble">
+
+            <strong>
+              Selamat datang! 👋
+            </strong>
+
+            <p>
+              Saya PTIS AI Assistant. Saya boleh membantu
+              anda mendapatkan maklumat berkaitan portal
+              dan perkhidmatan PTIS Zon Kuala Ketil.
+            </p>
+
+          </div>
+
+
+          <span class="message-time">
+            PTIS AI
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="chat-suggestions">
+
+        <span class="chat-suggestions-title">
+          Cuba pertanyaan:
+        </span>
+
+
+        <button
+          type="button"
+          class="chat-suggestion"
+          data-question="Apakah fungsi PTIS?"
+        >
+
+          <i data-lucide="circle-help"></i>
+
+          Apakah fungsi PTIS?
+
+        </button>
+
+
+        <button
+          type="button"
+          class="chat-suggestion"
+          data-question="Bagaimana saya mendapatkan bantuan ICT?"
+        >
+
+          <i data-lucide="headphones"></i>
+
+          Bantuan ICT
+
+        </button>
+
+
+        <button
+          type="button"
+          class="chat-suggestion"
+          data-question="Di mana saya boleh mendapatkan Digital Forms?"
+        >
+
+          <i data-lucide="files"></i>
+
+          Digital Forms
+
+        </button>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="chat-input-area">
+
+      <form
+        id="chatForm"
+        class="chat-form"
+      >
+
+        <div class="chat-input-wrapper">
+
+          <input
+            id="chatInput"
+            type="text"
+            placeholder="Taip pertanyaan anda..."
+            autocomplete="off"
+          >
+
+
+          <button
+            id="chatSendButton"
+            class="chat-send-button"
+            type="submit"
+          >
+
+            <i data-lucide="send"></i>
+
+          </button>
+
+        </div>
+
+      </form>
+
+
+      <p class="chat-disclaimer">
+        PTIS AI Assistant • Digital ICT Support
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+
+  <button
+    id="chatButton"
+    class="chat-floating-button"
+    type="button"
+    aria-expanded="false"
+  >
+
+
+    <div class="chat-floating-icon">
+
+      <i data-lucide="bot"></i>
+
+      <span class="floating-online-dot"></span>
+
+    </div>
+
+
+    <div class="chat-floating-text">
+
+      <strong>
+        Perlukan bantuan?
+      </strong>
+
+      <span>
+        Klik untuk bertanya
+      </span>
+
+    </div>
+
+
+    <i
+      data-lucide="message-circle"
+      class="chat-floating-arrow"
+    ></i>
+
+
+  </button>
+
+
+</div>
+
+<!-- DATA SEKOLAH -->
+<script src="js/school-data.js"></script>
+
+<!-- DATA SEKOLAH SELIAAN PTIS -->
+<script src="js/ptis-supervision-data.js"></script>
+
+<!-- SCHOOL DIRECTORY ENGINE -->
+<script src="js/maklumat-sekolah.js"></script>
+
+</body>
+
+</html>

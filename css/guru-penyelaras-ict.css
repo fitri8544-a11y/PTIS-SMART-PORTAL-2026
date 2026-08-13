@@ -1,0 +1,1349 @@
+/* =========================================================
+   PTIS SMART PORTAL 2026
+   GURU PENYELARAS ICT
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.gpi-standalone {
+  margin: 0;
+  min-height: 100vh;
+
+  background: #f7f9fc;
+
+  font-family: "Inter", sans-serif;
+
+  color: #111827;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.gpi-page-header {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-top: 3px solid #0877dc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+
+.gpi-header-inner {
+  width: min(1320px, calc(100% - 48px));
+
+  min-height: 105px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   HEADER LEFT
+========================================================= */
+
+.gpi-header-left {
+  min-width: 0;
+}
+
+
+.gpi-header-eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #0877dc;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+
+.gpi-header-left h1 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 27px;
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+
+.gpi-header-left p {
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.gpi-header-right {
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HALAMAN UTAMA BUTTON
+========================================================= */
+
+.gpi-home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 42px;
+
+  padding: 0 17px;
+
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+
+  background: #f8fbff;
+
+  color: #0877dc;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.gpi-home-btn:hover {
+  background: #eff6ff;
+
+  border-color: #93c5fd;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 15px
+    rgba(8, 120, 220, 0.08);
+}
+
+
+.gpi-home-arrow {
+  font-size: 17px;
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   SYSTEM STATUS
+========================================================= */
+
+.gpi-header-status {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+
+.gpi-header-status .status-dot {
+  width: 10px;
+  height: 10px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #10b981;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(16, 185, 129, 0.10);
+}
+
+
+.gpi-header-status small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.gpi-header-status strong {
+  display: block;
+
+  color: #059669;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.gpi-main {
+  width: min(1320px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  padding: 36px 0 70px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.gpi-intro {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 155px;
+
+  padding: 34px 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border: 1px solid #d8e5ef;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      120deg,
+      #ffffff 0%,
+      #f8fcff 60%,
+      #edf8ff 100%
+    );
+
+  box-shadow:
+    0 10px 28px
+    rgba(15, 23, 42, 0.035);
+}
+
+
+.gpi-intro::after {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  top: -130px;
+  right: -60px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(14, 165, 233, 0.07);
+}
+
+
+.gpi-intro-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 820px;
+}
+
+
+.section-eyebrow {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #0877dc;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+
+.gpi-intro h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+
+.gpi-intro p {
+  max-width: 760px;
+
+  margin: 11px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   INTRO ICON
+========================================================= */
+
+.gpi-intro-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 74px;
+  height: 74px;
+
+  flex: 0 0 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #cce6fb;
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  color: #0877dc;
+
+  box-shadow:
+    0 8px 22px
+    rgba(8, 119, 220, 0.08);
+}
+
+
+.gpi-intro-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+
+/* =========================================================
+   TAB NAVIGATION
+========================================================= */
+
+.gpi-tabs {
+  margin-top: 18px;
+
+  padding: 7px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 7px;
+
+  border: 1px solid #dbe5ee;
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 22px
+    rgba(15, 23, 42, 0.035);
+}
+
+
+.gpi-tab {
+  min-height: 64px;
+
+  padding: 10px 16px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: #f4f6f8;
+
+  color: #475569;
+
+  font-family: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.gpi-tab > svg {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+}
+
+
+.gpi-tab > div {
+  min-width: 0;
+}
+
+
+.gpi-tab strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+.gpi-tab span {
+  display: block;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  opacity: 0.72;
+}
+
+
+.gpi-tab:hover {
+  background: #eaf6ff;
+
+  color: #0877dc;
+}
+
+
+.gpi-tab.active {
+  background:
+    linear-gradient(
+      135deg,
+      #0877dc,
+      #0a8acb
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 7px 16px
+    rgba(8, 119, 220, 0.18);
+}
+
+
+/* =========================================================
+   CONTENT PANELS
+========================================================= */
+
+.gpi-panel {
+  display: none;
+
+  margin-top: 32px;
+}
+
+
+.gpi-panel.active {
+  display: block;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.gpi-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 18px;
+}
+
+
+.gpi-section-heading h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 24px;
+  font-weight: 800;
+
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   ROLE GRID
+========================================================= */
+
+.gpi-role-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   ROLE CARD
+========================================================= */
+
+.gpi-role-card {
+  min-height: 175px;
+
+  padding: 22px;
+
+  border: 1px solid #dbe5ee;
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 18px
+    rgba(15, 23, 42, 0.035);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.gpi-role-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #a8d5ff;
+
+  box-shadow:
+    0 10px 26px
+    rgba(15, 23, 42, 0.07);
+}
+
+
+/* ================= CARD TOP ================= */
+
+.gpi-role-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 17px;
+}
+
+
+.gpi-role-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eaf6ff;
+
+  color: #0877dc;
+}
+
+
+.gpi-role-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+
+.gpi-role-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 38px;
+  height: 26px;
+
+  padding: 0 10px;
+
+  border: 1px solid #cce5ff;
+  border-radius: 999px;
+
+  background: #f0f7ff;
+
+  color: #0877dc;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* ================= CONTENT ================= */
+
+.gpi-role-card h3 {
+  margin: 0 0 8px;
+
+  color: #111827;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+
+.gpi-role-card p {
+  margin: 0;
+
+  color: #52637a;
+
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   MANAGEMENT GRID
+========================================================= */
+
+.gpi-management-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   MANAGEMENT CARD
+========================================================= */
+
+.gpi-management-card {
+  padding: 22px;
+
+  border: 1px solid #dbe5ee;
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 18px
+    rgba(15, 23, 42, 0.035);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.gpi-management-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #a8d5ff;
+
+  box-shadow:
+    0 10px 26px
+    rgba(15, 23, 42, 0.07);
+}
+
+
+/* ================= HEADER ================= */
+
+.gpi-management-header {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 16px;
+}
+
+
+.gpi-management-icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eaf6ff;
+
+  color: #0877dc;
+}
+
+
+.gpi-management-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+
+.gpi-management-title {
+  min-width: 0;
+  flex: 1;
+}
+
+
+.gpi-management-title span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #0877dc;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.gpi-management-title h3 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+.gpi-management-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 36px;
+  height: 25px;
+
+  padding: 0 9px;
+
+  border: 1px solid #cce5ff;
+  border-radius: 999px;
+
+  background: #f0f7ff;
+
+  color: #0877dc;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+/* ================= DESCRIPTION ================= */
+
+.gpi-management-description {
+  margin: 0 0 17px;
+
+  color: #52637a;
+
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+
+/* ================= ITEMS ================= */
+
+.gpi-management-items {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 8px;
+}
+
+
+.gpi-management-item {
+  min-height: 38px;
+
+  padding: 8px 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  border: 1px solid #e3ebf3;
+  border-radius: 9px;
+
+  background: #f8fafc;
+
+  color: #475569;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+.gpi-management-item svg {
+  width: 14px;
+  height: 14px;
+
+  flex-shrink: 0;
+
+  color: #10a66a;
+}
+
+
+/* =========================================================
+   REFERENCE CONTAINER
+========================================================= */
+
+.gpi-reference-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   REFERENCE INTRO
+========================================================= */
+
+.gpi-reference-intro {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 23px 25px;
+
+  border: 1px solid #d7e4f1;
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f3faff 100%
+    );
+
+  box-shadow:
+    0 6px 20px
+    rgba(15, 23, 42, 0.035);
+}
+
+
+.gpi-reference-intro-icon {
+  width: 56px;
+  height: 56px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #eaf6ff;
+
+  color: #0877dc;
+}
+
+
+.gpi-reference-intro-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+
+.gpi-reference-intro > div:last-child > span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #0877dc;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.gpi-reference-intro h3 {
+  margin: 0 0 6px;
+
+  color: #111827;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+
+.gpi-reference-intro p {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   REFERENCE GRID
+========================================================= */
+
+.gpi-reference-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   REFERENCE CARD
+========================================================= */
+
+.gpi-reference-card {
+  padding: 22px;
+
+  border: 1px solid #dbe5ee;
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 18px
+    rgba(15, 23, 42, 0.035);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.gpi-reference-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #a8d5ff;
+
+  box-shadow:
+    0 10px 26px
+    rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================================================
+   REFERENCE CARD HEADER
+========================================================= */
+
+.gpi-reference-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 17px;
+}
+
+
+.gpi-reference-icon {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eaf6ff;
+
+  color: #0877dc;
+}
+
+
+.gpi-reference-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+
+.gpi-reference-category {
+  padding: 5px 9px;
+
+  border: 1px solid #cce5ff;
+  border-radius: 999px;
+
+  background: #f0f7ff;
+
+  color: #0877dc;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   REFERENCE CONTENT
+========================================================= */
+
+.gpi-reference-card h3 {
+  margin: 0 0 8px;
+
+  color: #111827;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+.gpi-reference-description {
+  margin: 0 0 17px;
+
+  color: #52637a;
+
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   REFERENCE POINTS
+========================================================= */
+
+.gpi-reference-points {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 8px;
+}
+
+
+.gpi-reference-point {
+  min-height: 36px;
+
+  padding: 8px 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  border-radius: 8px;
+
+  background: #f8fafc;
+
+  color: #475569;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+.gpi-reference-point svg {
+  width: 14px;
+  height: 14px;
+
+  flex-shrink: 0;
+
+  color: #10a66a;
+}
+
+
+/* =========================================================
+   RESPONSIVE REFERENCE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .gpi-reference-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .gpi-reference-intro {
+    align-items: flex-start;
+
+    padding: 20px;
+  }
+
+
+  .gpi-reference-points {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MANAGEMENT
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .gpi-management-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .gpi-management-items {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =========================================================
+   RESPONSIVE ROLE GRID
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .gpi-role-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   FOOTER SIZE
+   Selaraskan dengan halaman lain
+========================================================= */
+
+.gpi-standalone .footer {
+  font-size: 14px;
+}
+
+
+.gpi-standalone .footer-brand-header strong {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+.gpi-standalone .footer-brand-header span {
+  font-size: 12px;
+}
+
+
+.gpi-standalone .footer-brand > p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+.gpi-standalone .footer-status {
+  font-size: 12px;
+}
+
+
+.gpi-standalone .footer-column h3 {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+.gpi-standalone .footer-column a {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+.gpi-standalone .footer-status-top strong {
+  font-size: 13px;
+}
+
+
+.gpi-standalone .footer-status-card p {
+  font-size: 12px;
+}
+
+
+.gpi-standalone .footer-update span {
+  font-size: 11px;
+}
+
+
+.gpi-standalone .footer-update strong {
+  font-size: 12px;
+}
+
+
+.gpi-standalone .footer-bottom,
+.gpi-standalone .footer-bottom p,
+.gpi-standalone .footer-bottom-right {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .gpi-header-inner,
+  .gpi-main {
+    width:
+      min(100% - 32px, 1320px);
+  }
+
+
+  .gpi-tabs {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 680px) {
+
+  .gpi-header-inner {
+    min-height: auto;
+
+    padding: 18px 0;
+
+    align-items: flex-start;
+  }
+
+
+  .gpi-header-left h1 {
+    font-size: 23px;
+  }
+
+
+  .gpi-header-left p {
+    display: none;
+  }
+
+
+  .gpi-header-status {
+    display: none;
+  }
+
+
+  .gpi-home-btn {
+    min-height: 38px;
+
+    padding: 0 12px;
+
+    font-size: 11px;
+  }
+
+
+  .gpi-main {
+    width:
+      min(100% - 24px, 1320px);
+
+    padding: 24px 0 50px;
+  }
+
+
+  .gpi-intro {
+    min-height: auto;
+
+    padding: 27px 23px;
+  }
+
+
+  .gpi-intro h2 {
+    font-size: 26px;
+  }
+
+
+  .gpi-intro-icon {
+    display: none;
+  }
+
+
+  .gpi-section-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+}

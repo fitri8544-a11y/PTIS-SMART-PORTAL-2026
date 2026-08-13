@@ -1,0 +1,2010 @@
+/* =========================================================
+   PTIS SMART PORTAL 2026
+   SKOP TUGAS JTK
+   STANDALONE PAGE
+========================================================= */
+
+
+/* =========================================================
+   PAGE RESET
+========================================================= */
+
+.jtk-standalone {
+  margin: 0;
+  min-height: 100vh;
+
+  background: #f7f9fc;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  color: #111827;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.jtk-page-header {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-top:
+    3px solid #0877dc;
+
+  border-bottom:
+    1px solid #e2e8f0;
+}
+
+
+.jtk-header-inner {
+  width:
+    min(1320px, calc(100% - 48px));
+
+  min-height: 105px;
+
+  margin:
+    0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   HEADER LEFT
+========================================================= */
+
+.jtk-header-left {
+  min-width: 0;
+}
+
+
+.jtk-header-eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #0877dc;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+
+.jtk-header-left h1 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 27px;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+
+.jtk-header-left p {
+  margin:
+    6px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.jtk-header-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HOME BUTTON
+========================================================= */
+
+.jtk-home-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 42px;
+
+  padding:
+    0 17px;
+
+  border:
+    1px solid #bfdbfe;
+
+  border-radius:
+    10px;
+
+  background:
+    #f8fbff;
+
+  color:
+    #0877dc;
+
+  font-size:
+    13px;
+
+  font-weight:
+    700;
+
+  line-height: 1;
+
+  text-decoration:
+    none;
+
+  white-space:
+    nowrap;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.jtk-home-btn:hover {
+  background:
+    #eff6ff;
+
+  border-color:
+    #93c5fd;
+
+  box-shadow:
+    0 5px 15px
+    rgba(8, 120, 220, 0.08);
+
+  transform:
+    translateY(-1px);
+}
+
+
+.jtk-home-arrow {
+  font-size:
+    17px;
+
+  font-weight:
+    500;
+
+  line-height:
+    1;
+}
+
+
+/* =========================================================
+   SYSTEM STATUS
+========================================================= */
+
+.jtk-header-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+}
+
+
+.jtk-header-status .status-dot {
+  width: 10px;
+
+  height: 10px;
+
+  flex-shrink: 0;
+
+  border-radius:
+    50%;
+
+  background:
+    #10b981;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(16, 185, 129, 0.10);
+}
+
+
+.jtk-header-status small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.jtk-header-status strong {
+  display: block;
+
+  color: #059669;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.jtk-main {
+  width:
+    min(1320px, calc(100% - 48px));
+
+  margin:
+    0 auto;
+
+  padding:
+    36px 0 70px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.scope-intro {
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    38px 40px;
+
+  border:
+    1px solid #d8e5ef;
+
+  border-radius:
+    16px;
+
+  background:
+    linear-gradient(
+      120deg,
+      #ffffff 0%,
+      #f8fcff 60%,
+      #edf8ff 100%
+    );
+
+  box-shadow:
+    0 10px 28px
+    rgba(15, 23, 42, 0.035);
+}
+
+
+.scope-intro::after {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+
+  height: 250px;
+
+  top: -130px;
+
+  right: -60px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(14, 165, 233, 0.07);
+}
+
+
+.scope-intro-content {
+  position: relative;
+
+  z-index: 1;
+
+  max-width:
+    800px;
+}
+
+
+.section-eyebrow {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #0877dc;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+
+.scope-intro h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+
+.scope-intro p {
+  max-width: 760px;
+
+  margin:
+    11px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TAB NAVIGATION
+========================================================= */
+
+.scope-tabs {
+  margin-top:
+    18px;
+
+  padding:
+    7px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap:
+    7px;
+
+  border:
+    1px solid #dbe5ee;
+
+  border-radius:
+    13px;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 8px 22px
+    rgba(15, 23, 42, 0.035);
+}
+
+
+.scope-tab {
+  min-height:
+    62px;
+
+  padding:
+    9px 15px;
+
+  border:
+    0;
+
+  border-radius:
+    9px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    auto 1fr;
+
+  grid-template-rows:
+    auto auto;
+
+  column-gap:
+    10px;
+
+  align-items:
+    center;
+
+  background:
+    #f4f6f8;
+
+  color:
+    #475569;
+
+  font-family:
+    inherit;
+
+  text-align:
+    left;
+
+  cursor:
+    pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.scope-tab > svg {
+  width:
+    19px;
+
+  height:
+    19px;
+
+  grid-row:
+    1 / 3;
+}
+
+
+.scope-tab > span {
+  align-self:
+    end;
+
+  font-size:
+    12px;
+
+  font-weight:
+    800;
+}
+
+
+.scope-tab > small {
+  align-self:
+    start;
+
+  margin-top:
+    2px;
+
+  font-size:
+    10px;
+
+  font-weight:
+    600;
+
+  opacity:
+    0.72;
+}
+
+
+.scope-tab:hover {
+  background:
+    #eaf6ff;
+
+  color:
+    #0877dc;
+}
+
+
+.scope-tab.active {
+  background:
+    linear-gradient(
+      135deg,
+      #0877dc,
+      #0a8acb
+    );
+
+  color:
+    #ffffff;
+
+  box-shadow:
+    0 7px 16px
+    rgba(8, 119, 220, 0.18);
+}
+
+
+/* =========================================================
+   CONTENT PANELS - TEMPORARY BASIC STYLE
+========================================================= */
+
+.scope-panel {
+  display: none;
+
+  margin-top:
+    32px;
+}
+
+
+.scope-panel.active {
+  display: block;
+}
+
+
+.section-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom:
+    18px;
+}
+
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 24px;
+
+  font-weight: 800;
+
+  line-height: 1.25;
+}
+
+
+.section-count {
+  padding:
+    6px 13px;
+
+  border:
+    1px solid #dbe5ee;
+
+  border-radius:
+    999px;
+
+  background:
+    #ffffff;
+
+  color:
+    #475569;
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  white-space:
+    nowrap;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .jtk-header-inner,
+  .jtk-main {
+    width:
+      min(100% - 32px, 1320px);
+  }
+
+
+  .scope-tabs {
+    grid-template-columns:
+      1fr;
+  }
+
+}
+
+
+@media (max-width: 680px) {
+
+  .jtk-header-inner {
+    min-height:
+      auto;
+
+    padding:
+      18px 0;
+
+    align-items:
+      flex-start;
+  }
+
+
+  .jtk-header-left h1 {
+    font-size:
+      23px;
+  }
+
+
+  .jtk-header-left p {
+    display:
+      none;
+  }
+
+
+  .jtk-header-status {
+    display:
+      none;
+  }
+
+
+  .jtk-home-btn {
+    min-height:
+      38px;
+
+    padding:
+      0 12px;
+
+    font-size:
+      11px;
+  }
+
+
+  .jtk-main {
+    width:
+      min(100% - 24px, 1320px);
+
+    padding:
+      24px 0 50px;
+  }
+
+
+  .scope-intro {
+    padding:
+      28px 24px;
+  }
+
+
+  .scope-intro h2 {
+    font-size:
+      27px;
+  }
+
+
+  .section-heading {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap:
+      10px;
+  }
+
+}
+
+/* =========================================================
+   PENYELARAS TASK GRID
+========================================================= */
+
+.task-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    16px;
+}
+
+
+/* =========================================================
+   TASK CARD
+========================================================= */
+
+.task-card {
+  position: relative;
+
+  min-height:
+    110px;
+
+  padding:
+    20px 22px;
+
+  display:
+    flex;
+
+  align-items:
+    flex-start;
+
+  gap:
+    16px;
+
+  border:
+    1px solid #dbe5ee;
+
+  border-radius:
+    14px;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 5px 16px
+    rgba(15, 23, 42, 0.025);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.task-card:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    #a7d8e9;
+
+  box-shadow:
+    0 10px 24px
+    rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================================
+   TASK NUMBER
+========================================================= */
+
+.task-number {
+  width:
+    34px;
+
+  height:
+    34px;
+
+  flex:
+    0 0 34px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    50%;
+
+  background:
+    #ccfbf1;
+
+  color:
+    #0f9b8e;
+
+  font-size:
+    13px;
+
+  font-weight:
+    800;
+}
+
+
+/* =========================================================
+   TASK CONTENT
+========================================================= */
+
+.task-content {
+  min-width:
+    0;
+}
+
+
+.task-content h3 {
+  margin:
+    1px 0 6px;
+
+  color:
+    #111827;
+
+  font-size:
+    14px;
+
+  font-weight:
+    800;
+
+  line-height:
+    1.35;
+}
+
+
+.task-content p {
+  margin:
+    0;
+
+  color:
+    #475569;
+
+  font-size:
+    12px;
+
+  font-weight:
+    400;
+
+  line-height:
+    1.65;
+}
+
+
+/* =========================================================
+   IMPORTANT TASK
+   TASK NO.6
+========================================================= */
+
+.task-card:nth-child(6) {
+  border:
+    2px solid #dbe5ee;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(15, 155, 142, 0.035);
+}
+
+
+.task-card:nth-child(6)
+.task-number {
+
+  background:
+    #0f9b8e;
+
+  color:
+    #ffffff;
+}
+
+
+/* =========================================================
+   LAST TASK FULL WIDTH
+========================================================= */
+
+.task-card:last-child {
+  grid-column:
+    1 / -1;
+}
+
+
+/* =========================================================
+   RESPONSIVE TASK
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .task-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .task-card:last-child {
+    grid-column:
+      auto;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .task-card {
+    padding:
+      17px 16px;
+
+    gap:
+      13px;
+  }
+
+
+  .task-content h3 {
+    font-size:
+      13px;
+  }
+
+
+  .task-content p {
+    font-size:
+      11px;
+  }
+
+}
+
+/* =========================================================
+   JTK SCOPE CONTAINER
+========================================================= */
+
+.jtk-scope-container {
+  display: grid;
+  gap: 18px;
+}
+
+
+/* =========================================================
+   JTK SCOPE CARD
+========================================================= */
+
+.jtk-scope-card {
+  padding: 22px;
+
+  border:
+    1px solid #dbe5ee;
+
+  border-radius:
+    14px;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 5px 16px
+    rgba(15, 23, 42, 0.025);
+}
+
+
+.jtk-scope-title {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 16px;
+}
+
+
+.jtk-scope-title h3 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   SCOPE BADGE
+========================================================= */
+
+.jtk-scope-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 70px;
+
+  padding: 4px 11px;
+
+  border-radius: 999px;
+
+  background: #0877dc;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   JTK ITEM GRID
+========================================================= */
+
+.jtk-item-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+
+.jtk-item {
+  padding: 17px;
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 11px;
+
+  background: #f8fafc;
+}
+
+
+.jtk-item h4 {
+  margin: 0 0 7px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #05968a;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+
+.jtk-item h4 svg {
+  width: 15px;
+
+  height: 15px;
+
+  flex-shrink: 0;
+}
+
+
+.jtk-item p {
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   SKOP I
+========================================================= */
+
+
+/* item ke-5 hingga 7 = 3 column */
+
+.jtk-scope-card[data-scope="i"]
+.jtk-item-grid {
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+}
+
+
+.jtk-scope-card[data-scope="i"]
+.jtk-item {
+
+  grid-column:
+    span 3;
+
+}
+
+
+.jtk-scope-card[data-scope="i"]
+.jtk-item:nth-child(n+5) {
+
+  grid-column:
+    span 2;
+
+}
+
+
+/* =========================================================
+   SKOP II
+========================================================= */
+
+.jtk-scope-card[data-scope="ii"]
+.jtk-scope-badge {
+
+  background:
+    #158b58;
+}
+
+
+.jtk-scope-card[data-scope="ii"]
+.jtk-item h4 {
+
+  color:
+    #158b58;
+}
+
+
+/* =========================================================
+   SIMPLE SCOPES III / IV
+========================================================= */
+
+.jtk-scope-simple {
+  padding:
+    22px 24px;
+}
+
+
+.jtk-scope-simple
+.jtk-scope-title {
+
+  margin-bottom:
+    7px;
+}
+
+
+.jtk-scope-description {
+  margin: 0;
+
+  color:
+    #475569;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.65;
+}
+
+
+/* SKOP III */
+
+.jtk-scope-card[data-scope="iii"] {
+
+  border:
+    3px solid #f5b700;
+}
+
+
+.jtk-scope-card[data-scope="iii"]
+.jtk-scope-badge {
+
+  background:
+    #f5b700;
+
+  color:
+    #111827;
+}
+
+
+/* SKOP IV */
+
+.jtk-scope-card[data-scope="iv"] {
+
+  border:
+    3px solid #06b6d4;
+}
+
+
+.jtk-scope-card[data-scope="iv"]
+.jtk-scope-badge {
+
+  background:
+    #06b6d4;
+}
+
+
+/* =========================================================
+   SKOP III + IV SIDE BY SIDE
+========================================================= */
+
+.jtk-scope-container {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    18px;
+}
+
+
+/* SKOP I & II PENUH SATU BARIS */
+
+.jtk-scope-card[data-scope="i"],
+.jtk-scope-card[data-scope="ii"] {
+  grid-column:
+    1 / -1;
+}
+
+
+/* SKOP III */
+
+.jtk-scope-card[data-scope="iii"] {
+  grid-column:
+    1;
+
+  width:
+    auto;
+
+  margin:
+    0;
+}
+
+
+/* SKOP IV */
+
+.jtk-scope-card[data-scope="iv"] {
+  grid-column:
+    2;
+
+  width:
+    auto;
+
+  margin:
+    0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .jtk-scope-container {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .jtk-scope-card[data-scope="i"],
+  .jtk-scope-card[data-scope="ii"],
+  .jtk-scope-card[data-scope="iii"],
+  .jtk-scope-card[data-scope="iv"] {
+
+    grid-column:
+      1;
+
+    width:
+      auto;
+
+    margin:
+      0;
+  }
+
+
+  .jtk-item-grid,
+  .jtk-scope-card[data-scope="i"]
+  .jtk-item-grid {
+
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .jtk-scope-card[data-scope="i"]
+  .jtk-item,
+  .jtk-scope-card[data-scope="i"]
+  .jtk-item:nth-child(n+5) {
+
+    grid-column:
+      auto;
+  }
+
+}
+
+/* =========================================================
+   GARIS PANDUAN PEMUSATAN PTIS
+========================================================= */
+
+.guideline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+
+/* =========================================================
+   INTRO CARD
+========================================================= */
+
+.guideline-intro-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  padding: 26px 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f4faff 100%
+    );
+
+  border: 1px solid #d7e4f1;
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+
+.guideline-intro-icon {
+  width: 64px;
+  height: 64px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: #eaf5ff;
+
+  color: #0878dc;
+}
+
+
+.guideline-intro-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+
+.guideline-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  color: #0878dc;
+}
+
+
+.guideline-intro-card h3 {
+  margin: 0 0 7px;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  color: #0f172a;
+}
+
+
+.guideline-intro-card p {
+  margin: 0;
+
+  max-width: 850px;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: #52637a;
+}
+
+
+/* =========================================================
+   GUIDELINE GRID
+========================================================= */
+
+.guideline-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   GUIDELINE CARD
+========================================================= */
+
+.guideline-card {
+  position: relative;
+
+  min-height: 210px;
+
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #d8e3ef;
+  border-radius: 16px;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.035);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.guideline-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #a8d5ff;
+
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.guideline-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+
+.guideline-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eaf6ff;
+
+  color: #0780df;
+}
+
+
+.guideline-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+
+.guideline-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 38px;
+  height: 26px;
+
+  padding: 0 10px;
+
+  border-radius: 999px;
+
+  background: #f0f7ff;
+
+  border: 1px solid #cce5ff;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  color: #0878dc;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.guideline-card h3 {
+  margin: 0 0 9px;
+
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.4;
+
+  color: #101827;
+}
+
+
+.guideline-card p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  color: #52637a;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .guideline-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .guideline-intro-card {
+    align-items: flex-start;
+
+    padding: 22px;
+
+    gap: 16px;
+  }
+
+
+  .guideline-intro-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+
+  .guideline-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .guideline-card {
+    min-height: auto;
+  }
+
+}
+
+/* =========================================================
+   GARIS PANDUAN - PREMIUM LAYOUT
+========================================================= */
+
+.guideline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+
+/* ================= INTRO ================= */
+
+.guideline-intro {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 24px 26px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f7fbff 100%
+    );
+
+  border: 1px solid #d7e4f2;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+
+.guideline-intro-icon {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #eaf5ff;
+  color: #087be8;
+}
+
+
+.guideline-intro-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+
+.guideline-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  color: #087be8;
+}
+
+
+.guideline-intro h3 {
+  margin: 0 0 7px;
+
+  font-size: 19px;
+  font-weight: 800;
+
+  color: #111827;
+}
+
+
+.guideline-intro p {
+  margin: 0;
+
+  max-width: 900px;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: #64748b;
+}
+
+
+/* ================= GRID ================= */
+
+.guideline-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* ================= CARD ================= */
+
+.guideline-card {
+  position: relative;
+
+  min-height: 210px;
+
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #d8e3ef;
+  border-radius: 16px;
+
+  box-shadow:
+    0 6px 18px rgba(15, 23, 42, 0.035);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.guideline-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #9dcbf8;
+
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+
+/* ================= CARD TOP ================= */
+
+.guideline-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+
+.guideline-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eaf5ff;
+  color: #087be8;
+}
+
+
+.guideline-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+
+.guideline-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 38px;
+  height: 26px;
+
+  padding: 0 10px;
+
+  border: 1px solid #c9e2fb;
+  border-radius: 999px;
+
+  background: #f3f9ff;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  color: #087be8;
+}
+
+
+/* ================= CARD TEXT ================= */
+
+.guideline-card h3 {
+  margin: 0 0 10px;
+
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.4;
+
+  color: #111827;
+}
+
+
+.guideline-card p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.75;
+
+  color: #64748b;
+}
+
+
+/* =========================================================
+   TARIKH KUAT KUASA
+========================================================= */
+
+.guideline-notice {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 20px 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef8ff 0%,
+      #f8fcff 100%
+    );
+
+  border: 1px solid #b9ddff;
+  border-left: 4px solid #087be8;
+
+  border-radius: 14px;
+}
+
+
+.guideline-notice-icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #cfe7ff;
+  border-radius: 12px;
+
+  color: #087be8;
+}
+
+
+.guideline-notice-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+
+.guideline-notice > div:last-child > strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  color: #0f172a;
+}
+
+
+.guideline-notice p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  color: #52637a;
+}
+
+
+.guideline-notice p strong {
+  display: inline;
+
+  font-weight: 800;
+
+  color: #087be8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .guideline-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .guideline-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .guideline-intro {
+    align-items: flex-start;
+
+    padding: 20px;
+  }
+
+
+  .guideline-intro-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+
+  .guideline-card {
+    min-height: auto;
+  }
+
+
+  .guideline-notice {
+    align-items: flex-start;
+
+    padding: 18px;
+  }
+
+}
+
+/* =========================================================
+   FOOTER SIZE FIX
+   Samakan dengan halaman Maklumat Sekolah / Organisasi
+========================================================= */
+
+.jtk-standalone .footer {
+  font-size: 14px;
+}
+
+
+/* ================= BRAND ================= */
+
+.jtk-standalone .footer-brand-header strong {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.jtk-standalone .footer-brand-header span {
+  font-size: 12px;
+}
+
+.jtk-standalone .footer-brand > p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.jtk-standalone .footer-status {
+  font-size: 12px;
+}
+
+
+/* ================= COLUMN ================= */
+
+.jtk-standalone .footer-column h3 {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.jtk-standalone .footer-column a {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* ================= STATUS CARD ================= */
+
+.jtk-standalone .footer-status-top strong {
+  font-size: 13px;
+}
+
+.jtk-standalone .footer-status-card p {
+  font-size: 12px;
+}
+
+.jtk-standalone .footer-update span {
+  font-size: 11px;
+}
+
+.jtk-standalone .footer-update strong {
+  font-size: 12px;
+}
+
+
+/* ================= FOOTER BOTTOM ================= */
+
+.jtk-standalone .footer-bottom {
+  font-size: 12px;
+}
+
+.jtk-standalone .footer-bottom p,
+.jtk-standalone .footer-bottom-right {
+  font-size: 12px;
+}
