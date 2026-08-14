@@ -1,0 +1,590 @@
+/* =========================================================
+   PTIS SMART PORTAL 2026
+   GLOBAL FOOTER
+========================================================= */
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+  margin-top: 15px;
+
+  color: #dbeafe;
+
+  background:
+    linear-gradient(
+      135deg,
+      #075ea8 0%,
+      #0067c5 55%,
+      #087dbd 100%
+    );
+
+}
+
+
+/* =========================================================
+   FOOTER MAIN
+========================================================= */
+
+.footer-main {
+
+  width: 100%;
+
+  max-width: var(--content-max-width);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 1.5fr)
+    minmax(150px, 0.65fr)
+    minmax(180px, 0.8fr)
+    minmax(220px, 1fr);
+
+  gap: 45px;
+
+  margin: 0 auto;
+
+  padding:
+    45px 30px 38px;
+
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footer-brand-header {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+}
+
+
+.footer-logo {
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #075ea8;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 0, 0, 0.12);
+
+}
+
+
+.footer-brand-header > div:last-child {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.footer-brand-header strong {
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+}
+
+
+.footer-brand-header span {
+
+  margin-top: 4px;
+
+  color: #bae6fd;
+
+  font-size: 10px;
+
+}
+
+
+.footer-brand > p {
+
+  max-width: 410px;
+
+  margin-top: 18px;
+
+  color: #d7e9f8;
+
+  font-size: 11px;
+
+  line-height: 1.75;
+
+}
+
+
+.footer-status {
+
+  width: fit-content;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 18px;
+
+  padding:
+    7px 11px;
+
+  border:
+    1px solid rgba(255,255,255,0.15);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+}
+
+
+.footer-status .status-dot {
+
+  width: 7px;
+  height: 7px;
+
+  display: inline-block;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #10b981;
+
+  box-shadow: none;
+
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  flex-direction: column;
+
+}
+
+
+.footer-column h3 {
+
+  position: relative;
+
+  margin-bottom: 17px;
+
+  padding-bottom: 9px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 750;
+
+}
+
+
+.footer-column h3::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 25px;
+  height: 2px;
+
+  border-radius: 5px;
+
+  background: #67e8f9;
+
+}
+
+
+.footer-column > a {
+
+  margin-bottom: 10px;
+
+  color: #d7e9f8;
+
+  font-size: 10px;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+
+}
+
+
+.footer-column > a:hover {
+
+  color: #ffffff;
+
+  transform:
+    translateX(3px);
+
+}
+
+
+/* =========================================================
+   STATUS CARD
+========================================================= */
+
+.footer-status-card {
+
+  width: 100%;
+
+  padding: 13px;
+
+  border:
+    1px solid rgba(255,255,255,0.15);
+
+  border-radius: 11px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+}
+
+
+.footer-status-top {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+}
+
+
+.footer-status-top strong {
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+}
+
+
+.footer-status-card p {
+
+  margin-top: 7px;
+
+  color: #cde5f7;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   LAST UPDATE
+========================================================= */
+
+.footer-update {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 14px;
+
+}
+
+
+.footer-update > svg {
+
+  width: 16px;
+  height: 16px;
+
+  color: #67e8f9;
+
+}
+
+
+.footer-update > div {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.footer-update span {
+
+  color: #b9d8ef;
+
+  font-size: 8px;
+
+}
+
+
+.footer-update strong {
+
+  margin-top: 3px;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+
+  width: 100%;
+
+  max-width: var(--content-max-width);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin: 0 auto;
+
+  padding:
+    18px 30px;
+
+  border-top:
+    1px solid rgba(255,255,255,0.12);
+
+}
+
+
+.footer-bottom p,
+.footer-bottom-right {
+
+  color: #bcdcf2;
+
+  font-size: 9px;
+
+}
+
+
+.footer-bottom-right {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+}
+
+
+.footer-separator {
+
+  color: #67e8f9;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .footer-main {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 38px;
+
+    padding:
+      40px 28px 35px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .footer-main {
+
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+
+    padding:
+      36px 22px 30px;
+
+  }
+
+
+  .footer-brand-header strong {
+
+    font-size: 16px;
+
+  }
+
+
+  .footer-brand > p {
+
+    font-size: 12px;
+
+  }
+
+
+  .footer-column h3 {
+
+    font-size: 14px;
+
+  }
+
+
+  .footer-column > a {
+
+    font-size: 12px;
+
+  }
+
+
+  .footer-bottom {
+
+    padding:
+      18px 22px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+  }
+
+
+  .footer-bottom p,
+  .footer-bottom-right {
+
+    font-size: 10px;
+
+  }
+
+
+  .footer-bottom-right {
+
+    flex-wrap: wrap;
+
+  }
+
+}
+
+/* =========================================================
+   GLOBAL FOOTER SIZE STANDARD
+   Standard: Organisasi & Maklumat Sekolah
+========================================================= */
+
+.footer {
+  font-size: 14px;
+}
+
+.footer-brand-header strong {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.footer-brand-header span {
+  font-size: 13px;
+}
+
+.footer-brand > p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.footer-column a {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.footer-status-card strong {
+  font-size: 13px;
+}
+
+.footer-status-card p {
+  font-size: 12px;
+}
+
+.footer-update span {
+  font-size: 11px;
+}
+
+.footer-update strong {
+  font-size: 12px;
+}
+
+.footer-bottom,
+.footer-bottom p,
+.footer-bottom-right {
+  font-size: 12px;
+}

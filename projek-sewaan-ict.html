@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Projek Sewaan ICT Sekolah | PTIS Daerah Baling
+    </title>
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- PROJEK SEWAAN ICT CSS -->
+    <link rel="stylesheet" href="css/projek-sewaan-ict.css">
+
+    <!-- GLOBAL FOOTER CSS -->
+    <link rel="stylesheet" href="css/footer.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     PAGE HEADER
+========================================================= -->
+
+<header class="sewaan-page-header">
+
+    <div class="sewaan-header-inner">
+
+        <div class="sewaan-header-title">
+
+            <span class="sewaan-eyebrow">
+                PROJEK SEWAAN ICT SEKOLAH
+            </span>
+
+            <h1>
+                Pengurusan Projek Sewaan ICT
+            </h1>
+
+            <p>
+                Maklumat kontrak, fasa projek dan peralatan ICT
+                sekolah di Daerah Baling.
+            </p>
+
+        </div>
+
+
+        <div class="sewaan-header-actions">
+
+            <a
+                href="index.html"
+                class="sewaan-home-btn"
+            >
+                <i data-lucide="arrow-left"></i>
+
+                <span>
+                    Halaman Utama
+                </span>
+            </a>
+
+
+            <div class="sewaan-system-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+
+                    <small>
+                        SYSTEM STATUS
+                    </small>
+
+                    <strong>
+                        ONLINE
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="sewaan-date-box">
+
+                <i data-lucide="calendar-days"></i>
+
+                <div>
+
+                    <small>
+                        HARI INI
+                    </small>
+
+                    <strong id="currentDate">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="sewaan-main">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="sewaan-hero">
+
+        <div class="sewaan-hero-content">
+
+            <span class="section-label">
+                PENGURUSAN ASET ICT
+            </span>
+
+            <h2>
+                Projek Sewaan ICT Sekolah
+            </h2>
+
+            <p>
+                Pusat maklumat bagi projek sewaan peralatan ICT
+                yang melibatkan peralatan Pengajaran dan
+                Pembelajaran (PdP), Pengurusan dan Pentadbiran
+                (PDT) serta Peranti Guru.
+            </p>
+
+        </div>
+
+
+        <div class="sewaan-hero-icon">
+
+            <i data-lucide="monitor-cog"></i>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         KPI
+    ====================================================== -->
+
+    <section class="sewaan-kpi-grid">
+
+
+        <article class="sewaan-kpi-card">
+
+            <div class="kpi-icon">
+                <i data-lucide="layers-3"></i>
+            </div>
+
+            <div>
+                <strong>8</strong>
+                <span>Projek / Fasa</span>
+            </div>
+
+        </article>
+
+
+
+        <article class="sewaan-kpi-card">
+
+            <div class="kpi-icon">
+                <i data-lucide="presentation"></i>
+            </div>
+
+            <div>
+                <strong>4</strong>
+                <span>Fasa Peralatan PdP</span>
+            </div>
+
+        </article>
+
+
+
+        <article class="sewaan-kpi-card">
+
+            <div class="kpi-icon">
+                <i data-lucide="building-2"></i>
+            </div>
+
+            <div>
+                <strong>2</strong>
+                <span>Fasa Peralatan PDT</span>
+            </div>
+
+        </article>
+
+
+
+        <article class="sewaan-kpi-card">
+
+            <div class="kpi-icon">
+                <i data-lucide="laptop"></i>
+            </div>
+
+            <div>
+                <strong>2</strong>
+                <span>Fasa Peranti Guru</span>
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJECT NAVIGATION
+    ====================================================== -->
+
+    <section class="sewaan-project-nav">
+
+        <button
+            class="project-tab active"
+            data-filter="all"
+        >
+            <i data-lucide="layout-grid"></i>
+
+            <span>
+                Semua Projek
+            </span>
+
+            <small>8 Fasa</small>
+        </button>
+
+
+        <button
+            class="project-tab"
+            data-filter="pdp"
+        >
+            <i data-lucide="presentation"></i>
+
+            <span>
+                Peralatan PdP
+            </span>
+
+            <small>4 Fasa</small>
+        </button>
+
+
+        <button
+            class="project-tab"
+            data-filter="pdt"
+        >
+            <i data-lucide="building-2"></i>
+
+            <span>
+                Peralatan PDT
+            </span>
+
+            <small>2 Fasa</small>
+        </button>
+
+
+        <button
+            class="project-tab"
+            data-filter="guru"
+        >
+            <i data-lucide="laptop"></i>
+
+            <span>
+                Peranti Guru
+            </span>
+
+            <small>2 Fasa</small>
+        </button>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJECT HEADING
+    ====================================================== -->
+
+    <section class="sewaan-section-heading">
+
+        <div>
+
+            <span class="section-label">
+                MAKLUMAT KONTRAK
+            </span>
+
+            <h2>
+                Senarai Projek Sewaan ICT
+            </h2>
+
+            <p>
+                Maklumat kontrak dan perkakasan mengikut
+                projek serta fasa pelaksanaan.
+            </p>
+
+        </div>
+
+
+        <span
+            class="project-count"
+            id="projectCount"
+        >
+            8 Projek / Fasa
+        </span>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJECT CARDS
+    ====================================================== -->
+
+    <section
+        class="sewaan-project-grid"
+        id="projectGrid"
+    >
+
+
+        <!-- PDP FASA 1 -->
+
+        <article
+            class="project-card"
+            data-category="pdp"
+        >
+
+            <div class="project-card-header">
+
+                <div>
+
+                    <span class="project-category">
+                        PERALATAN PDP
+                    </span>
+
+                    <h3>
+                        PDP FASA 1
+                    </h3>
+
+                </div>
+
+                <span class="lease-badge lease-use">
+                    LEASE TO USE
+                </span>
+
+            </div>
+
+
+            <div class="project-company">
+
+                <i data-lucide="building"></i>
+
+                <div>
+                    <small>SYARIKAT PEMBEKAL</small>
+
+                    <strong>
+                        SETIA MAKMUR GEMILANG SDN. BHD.
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="project-period">
+
+                <div>
+                    <small>TARIKH MULA</small>
+                    <strong>15 Dis 2021</strong>
+                </div>
+
+                <i data-lucide="arrow-right"></i>
+
+                <div>
+                    <small>TARIKH TAMAT</small>
+                    <strong>14 Mei 2027</strong>
+                </div>
+
+                <div class="project-duration">
+                    <small>TEMPOH</small>
+                    <strong>65 Bulan</strong>
+                </div>
+
+            </div>
+
+
+            <button
+                class="project-detail-btn"
+                data-project="pdp1"
+            >
+                Lihat Perincian
+
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </article>
+
+
+
+        <!-- PDP FASA 2 -->
+
+        <article
+            class="project-card"
+            data-category="pdp"
+        >
+
+            <div class="project-card-header">
+
+                <div>
+
+                    <span class="project-category">
+                        PERALATAN PDP
+                    </span>
+
+                    <h3>
+                        PDP FASA 2
+                    </h3>
+
+                </div>
+
+                <span class="lease-badge lease-use">
+                    LEASE TO USE
+                </span>
+
+            </div>
+
+
+            <div class="project-company">
+
+                <i data-lucide="building"></i>
+
+                <div>
+                    <small>SYARIKAT PEMBEKAL</small>
+
+                    <strong>
+                        SNS NETWORK (M) SDN. BHD.
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="project-period">
+
+                <div>
+                    <small>TARIKH MULA</small>
+                    <strong>20 Dis 2022</strong>
+                </div>
+
+                <i data-lucide="arrow-right"></i>
+
+                <div>
+                    <small>TARIKH TAMAT</small>
+                    <strong>19 Mei 2028</strong>
+                </div>
+
+                <div class="project-duration">
+                    <small>TEMPOH</small>
+                    <strong>65 Bulan</strong>
+                </div>
+
+            </div>
+
+
+            <button
+                class="project-detail-btn"
+                data-project="pdp2"
+            >
+                Lihat Perincian
+
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </article>
+
+
+
+        <!-- PDP FASA 3 -->
+
+        <article
+            class="project-card"
+            data-category="pdp"
+        >
+
+            <div class="project-card-header">
+
+                <div>
+
+                    <span class="project-category">
+                        PERALATAN PDP
+                    </span>
+
+                    <h3>
+                        PDP FASA 3
+                    </h3>
+
+                </div>
+
+                <span class="lease-badge lease-use">
+                    LEASE TO USE
+                </span>
+
+            </div>
+
+
+            <div class="project-company">
+
+                <i data-lucide="building"></i>
+
+                <div>
+                    <small>SYARIKAT PEMBEKAL</small>
+
+                    <strong>
+                        PRIVASIA SDN. BHD.
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="project-period">
+
+                <div>
+                    <small>TARIKH MULA</small>
+                    <strong>26 Okt 2023</strong>
+                </div>
+
+                <i data-lucide="arrow-right"></i>
+
+                <div>
+                    <small>TARIKH TAMAT</small>
+                    <strong>25 Mac 2029</strong>
+                </div>
+
+                <div class="project-duration">
+                    <small>TEMPOH</small>
+                    <strong>65 Bulan</strong>
+                </div>
+
+            </div>
+
+
+            <button
+                class="project-detail-btn"
+                data-project="pdp3"
+            >
+                Lihat Perincian
+
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </article>
+
+
+
+        <!-- PDP FASA 4 -->
+
+        <article
+            class="project-card"
+            data-category="pdp"
+        >
+
+            <div class="project-card-header">
+
+                <div>
+
+                    <span class="project-category">
+                        PERALATAN PDP
+                    </span>
+
+                    <h3>
+                        PDP FASA 4
+                    </h3>
+
+                </div>
+
+                <span class="lease-badge lease-own">
+                    LEASE TO OWN
+                </span>
+
+            </div>
+
+
+            <div class="project-company">
+
+                <i data-lucide="building"></i>
+
+                <div>
+                    <small>SYARIKAT PEMBEKAL</small>
+
+                    <strong>
+                        MITRACORP RESOURCES SDN. BHD.
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="project-period">
+
+                <div>
+                    <small>TARIKH MULA</small>
+                    <strong>01 Jan 2026</strong>
+                </div>
+
+                <i data-lucide="arrow-right"></i>
+
+                <div>
+                    <small>TARIKH TAMAT</small>
+                    <strong>31 Mei 2031</strong>
+                </div>
+
+                <div class="project-duration">
+                    <small>TEMPOH</small>
+                    <strong>65 Bulan</strong>
+                </div>
+
+            </div>
+
+
+            <button
+                class="project-detail-btn"
+                data-project="pdp4"
+            >
+                Lihat Perincian
+
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </article>
+
+
+
+        <!-- PDT FASA 1 -->
+
+        <article
+            class="project-card"
+            data-category="pdt"
+        >
+
+            <div class="project-card-header">
+
+                <div>
+
+                    <span class="project-category">
+                        PERALATAN PDT
+                    </span>
+
+                    <h3>
+                        PDT FASA 1
+                    </h3>
+
+                </div>
+
+                <span class="lease-badge lease-use">
+                    LEASE TO USE
+                </span>
+
+            </div>
+
+
+            <div class="project-company">
+
+                <i data-lucide="building"></i>
+
+                <div>
+                    <small>SYARIKAT PEMBEKAL</small>
+
+                    <strong>
+                        NIGHT ELECTRONICS (M) SDN. BHD.
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="project-period">
+
+                <div>
+                    <small>TARIKH MULA</small>
+                    <strong>03 Sep 2021</strong>
+                </div>
+
+                <i data-lucide="arrow-right"></i>
+
+                <div>
+                    <small>TARIKH TAMAT</small>
+                    <strong>02 Sep 2026</strong>
+                </div>
+
+                <div class="project-duration">
+                    <small>TEMPOH</small>
+                    <strong>60 Bulan</strong>
+                </div>
+
+            </div>
+
+
+            <button
+                class="project-detail-btn"
+                data-project="pdt1"
+            >
+                Lihat Perincian
+
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </article>
+
+
+
+        <!-- PDT FASA 2 -->
+
+        <article
+            class="project-card"
+            data-category="pdt"
+        >
+
+            <div class="project-card-header">
+
+                <div>
+
+                    <span class="project-category">
+                        PERALATAN PDT
+                    </span>
+
+                    <h3>
+                        PDT FASA 2
+                    </h3>
+
+                </div>
+
+                <span class="lease-badge lease-own">
+                    LEASE TO OWN
+                </span>
+
+            </div>
+
+
+            <div class="project-company">
+
+                <i data-lucide="building"></i>
+
+                <div>
+                    <small>SYARIKAT PEMBEKAL</small>
+
+                    <strong>
+                        ARIZ DIGITAL SDN. BHD.
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="project-period">
+
+                <div>
+                    <small>TARIKH MULA</small>
+                    <strong>01 Mei 2025</strong>
+                </div>
+
+                <i data-lucide="arrow-right"></i>
+
+                <div>
+                    <small>TARIKH TAMAT</small>
+                    <strong>30 Apr 2030</strong>
+                </div>
+
+                <div class="project-duration">
+                    <small>TEMPOH</small>
+                    <strong>60 Bulan</strong>
+                </div>
+
+            </div>
+
+
+            <button
+                class="project-detail-btn"
+                data-project="pdt2"
+            >
+                Lihat Perincian
+
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </article>
+
+
+
+        <!-- PERANTI GURU FASA 1 -->
+
+        <article
+            class="project-card"
+            data-category="guru"
+        >
+
+            <div class="project-card-header">
+
+                <div>
+
+                    <span class="project-category">
+                        PERANTI GURU
+                    </span>
+
+                    <h3>
+                        PERANTI GURU FASA 1
+                    </h3>
+
+                </div>
+
+                <span class="lease-badge lease-own">
+                    LEASE TO OWN
+                </span>
+
+            </div>
+
+
+            <div class="project-company">
+
+                <i data-lucide="building"></i>
+
+                <div>
+                    <small>SYARIKAT PEMBEKAL</small>
+
+                    <strong>
+                        FGV PRODATA SYSTEMS SDN. BHD.
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="project-period">
+
+                <div>
+                    <small>TARIKH MULA</small>
+                    <strong>15 Dis 2023</strong>
+                </div>
+
+                <i data-lucide="arrow-right"></i>
+
+                <div>
+                    <small>TARIKH TAMAT</small>
+                    <strong>14 Dis 2028</strong>
+                </div>
+
+                <div class="project-duration">
+                    <small>TEMPOH</small>
+                    <strong>60 Bulan</strong>
+                </div>
+
+            </div>
+
+
+            <button
+                class="project-detail-btn"
+                data-project="guru1"
+            >
+                Lihat Perincian
+
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </article>
+
+
+
+        <!-- PERANTI GURU FASA 2 -->
+
+        <article
+            class="project-card"
+            data-category="guru"
+        >
+
+            <div class="project-card-header">
+
+                <div>
+
+                    <span class="project-category">
+                        PERANTI GURU
+                    </span>
+
+                    <h3>
+                        PERANTI GURU FASA 2
+                    </h3>
+
+                </div>
+
+                <span class="lease-badge lease-own">
+                    LEASE TO OWN
+                </span>
+
+            </div>
+
+
+            <div class="project-company">
+
+                <i data-lucide="building"></i>
+
+                <div>
+                    <small>SYARIKAT PEMBEKAL</small>
+
+                    <strong>
+                        TRIDIMAS SDN. BHD.
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="project-period">
+
+                <div>
+                    <small>TARIKH MULA</small>
+                    <strong>01 Mei 2026</strong>
+                </div>
+
+                <i data-lucide="arrow-right"></i>
+
+                <div>
+                    <small>TARIKH TAMAT</small>
+                    <strong>30 Apr 2031</strong>
+                </div>
+
+                <div class="project-duration">
+                    <small>TEMPOH</small>
+                    <strong>60 Bulan</strong>
+                </div>
+
+            </div>
+
+
+            <button
+                class="project-detail-btn"
+                data-project="guru2"
+            >
+                Lihat Perincian
+
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </article>
+
+
+    </section>
+
+
+</main>
+
+<!-- GLOBAL FOOTER -->
+<div id="globalFooter"></div>
+
+<!-- =========================================================
+     PROJECT DETAIL MODAL
+========================================================= -->
+
+<div
+    class="project-modal"
+    id="projectModal"
+    aria-hidden="true"
+>
+
+    <div class="project-modal-overlay"></div>
+
+
+    <div class="project-modal-dialog">
+
+        <button
+            class="project-modal-close"
+            id="projectModalClose"
+            aria-label="Tutup"
+        >
+            <i data-lucide="x"></i>
+        </button>
+
+
+        <div id="projectModalContent">
+
+            <!--
+                Kandungan akan dimasukkan
+                melalui projek-sewaan-ict.js
+            -->
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="js/projek-sewaan-ict.js"></script>
+
+<script>
+lucide.createIcons();
+</script>
+
+<script src="js/footer.js"></script>
+
+
+</body>
+</html>
