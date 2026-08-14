@@ -8247,3 +8247,61 @@ body.school-modal-open {
 .organization-standalone .footer-bottom {
   font-size: 12px;
 }
+
+/* =========================================================
+   PTIS BRAND LOGO
+========================================================= */
+
+.brand-logo {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+
+  overflow: hidden;
+}
+
+.brand-logo-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+/* =========================================================
+   ORGANISASI — GLOBAL FOOTER LOGO FIX
+========================================================= */
+
+.organization-standalone .footer-logo {
+    width: 64px;
+    height: 64px;
+
+    padding: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    border-radius: 50% !important;
+
+    box-shadow: none !important;
+
+    overflow: hidden;
+}
+
+.organization-standalone .footer-logo-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}

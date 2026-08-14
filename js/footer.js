@@ -35,8 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="footer-brand-header">
 
             <div class="footer-logo">
-              PTIS
-            </div>
+
+  <img
+    src="assets/logo-ptis.png"
+    alt="Logo PTIS Daerah Baling"
+    class="footer-logo-image"
+  >
+
+</div>
 
             <div>
 
