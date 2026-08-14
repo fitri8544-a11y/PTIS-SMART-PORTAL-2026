@@ -472,6 +472,16 @@ const gpiReferences = [
 ];
 
 /* =========================================================
+   EXPOSE GURU PENYELARAS ICT DATA FOR PTIS AI
+========================================================= */
+
+window.ptisGPIRoles =
+  gpiRoles;
+
+window.ptisGPIReferences =
+  gpiReferences;
+
+/* =========================================================
    RENDER : RUJUKAN
 ========================================================= */
 

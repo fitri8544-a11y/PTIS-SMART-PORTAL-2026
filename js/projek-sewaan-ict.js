@@ -361,6 +361,14 @@ if (footerLastUpdate) {
 
 
     /* =====================================================
+   EXPOSE PROJECT DATA FOR PTIS AI
+===================================================== */
+
+window.ptisProjectData =
+    projectData;
+
+
+    /* =====================================================
        TARIKH SEMASA
     ===================================================== */
 
@@ -762,21 +770,22 @@ if (footerLastUpdate) {
 
     /* ESC KEY */
 
-    document.addEventListener(
-        "keydown",
-        event => {
+document.addEventListener(
+    "keydown",
+    event => {
 
-            if (
-                event.key === "Escape" &&
-                modal.classList.contains("active")
-            ) {
+        if (
+            event.key === "Escape" &&
+            modal &&
+            modal.classList.contains("active")
+        ) {
 
-                closeProjectModal();
-
-            }
+            closeProjectModal();
 
         }
-    );
+
+    }
+);
 
 
     /* =====================================================

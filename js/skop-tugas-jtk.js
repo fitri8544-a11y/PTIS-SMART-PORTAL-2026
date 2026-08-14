@@ -207,6 +207,16 @@ const jtkScopes = [
 ];
 
 /* =========================================================
+   EXPOSE PTIS DATA FOR AI ASSISTANT
+========================================================= */
+
+window.ptisPenyelarasTasks =
+  penyelarasTasks;
+
+window.ptisJTKScopes =
+  jtkScopes;
+
+/* =========================================================
    GARIS PANDUAN PEMUSATAN PTIS
 ========================================================= */
 
