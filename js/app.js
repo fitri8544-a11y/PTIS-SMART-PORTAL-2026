@@ -364,9 +364,16 @@ function addAIMessage(message) {
     "chat-message chat-message-ai";
 
   messageElement.innerHTML = `
+
     <div class="message-avatar">
-      <i data-lucide="bot"></i>
-    </div>
+
+  <img
+    src="assets/ptis-ai-assistant.png"
+    alt="PTIS AI Assistant"
+    class="message-avatar-image"
+  >
+
+</div>
 
     <div class="message-content">
 

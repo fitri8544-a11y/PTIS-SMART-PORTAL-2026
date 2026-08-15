@@ -8305,3 +8305,52 @@ body.school-modal-open {
 
     object-fit: contain;
 }
+
+/* =====================================================
+   PTIS AI — FLOATING BUTTON ANIMATION
+===================================================== */
+
+.chat-floating-button {
+  animation: ptisAssistantFloat 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes ptisAssistantFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+
+/* Pause floating slightly when hovered */
+
+.chat-floating-button:hover {
+  animation-play-state: paused;
+  transform: translateY(-3px);
+}
+
+/* =====================================================
+   PTIS AI — AVATAR IMAGE
+===================================================== */
+
+.chat-avatar,
+.message-avatar {
+  overflow: hidden;
+}
+
+.chat-avatar-image,
+.message-avatar-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
