@@ -73,6 +73,87 @@ function findPtisMember(memberId) {
 }
 
 
+/* =====================================================
+   SPM ORGANIZATION CHART MODAL
+===================================================== */
+
+const openSpmChart =
+  document.getElementById("openSpmChart");
+
+const spmChartModal =
+  document.getElementById("spmChartModal");
+
+const closeSpmChartButtons =
+  document.querySelectorAll("[data-close-spm-chart]");
+
+
+function openSpmChartModal() {
+
+  if (!spmChartModal) return;
+
+  spmChartModal.classList.add("active");
+
+  spmChartModal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow = "hidden";
+
+}
+
+
+function closeSpmChartModal() {
+
+  if (!spmChartModal) return;
+
+  spmChartModal.classList.remove("active");
+
+  spmChartModal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow = "";
+
+}
+
+
+openSpmChart?.addEventListener(
+  "click",
+  openSpmChartModal
+);
+
+
+closeSpmChartButtons.forEach(
+  button => {
+
+    button.addEventListener(
+      "click",
+      closeSpmChartModal
+    );
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key === "Escape" &&
+      spmChartModal?.classList.contains("active")
+    ) {
+
+      closeSpmChartModal();
+
+    }
+
+  }
+);
+
+
 /* =========================================================
    OPEN SCHOOL MODAL
 ========================================================= */
@@ -570,6 +651,7 @@ function getDistrictSchoolCount() {
           {
             id: "norhazfizi",
             name: "Norhafzizi",
+            imageId: "1kyJGiDRFAYCGyNEZCJWTvwl_cTPsbL3V",
             leader: false
           }
 

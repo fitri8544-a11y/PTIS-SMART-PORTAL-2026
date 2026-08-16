@@ -279,3 +279,64 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
+/* =========================================================
+   GLOBAL FAVICON — PTIS
+========================================================= */
+
+function initGlobalFavicon() {
+
+  /* ================= FAVICON ================= */
+
+  let favicon =
+    document.querySelector(
+      'link[rel="icon"]'
+    );
+
+  if (!favicon) {
+
+    favicon =
+      document.createElement("link");
+
+    favicon.rel = "icon";
+
+    document.head.appendChild(
+      favicon
+    );
+
+  }
+
+  favicon.type = "image/png";
+  favicon.href = "assets/favicon-ptis.png";
+
+
+  /* ================= APPLE TOUCH ICON ================= */
+
+  let appleIcon =
+    document.querySelector(
+      'link[rel="apple-touch-icon"]'
+    );
+
+  if (!appleIcon) {
+
+    appleIcon =
+      document.createElement("link");
+
+    appleIcon.rel =
+      "apple-touch-icon";
+
+    document.head.appendChild(
+      appleIcon
+    );
+
+  }
+
+  appleIcon.href =
+    "assets/favicon-ptis.png";
+
+}
+
+
+/* ================= INITIALIZE ================= */
+
+initGlobalFavicon();

@@ -12,11 +12,11 @@
 
   <meta
     name="description"
-    content="Organisasi PTIS Zon Kuala Ketil"
+    content="Organisasi PTIS Daerah Baling"
   >
 
   <title>
-    Organisasi | PTIS Zon Kuala Ketil
+    Organisasi | PTIS Daerah Baling
   </title>
 
 
@@ -397,11 +397,11 @@
         </span>
 
         <h4>
-          Ketua Sektor Pengurusan Maklumat
+          Pn Wan Mahani binti Mahmod
         </h4>
 
         <p>
-          Sektor Pengurusan Maklumat
+          Ketua Sektor Pengurusan Maklumat
         </p>
 
       </div>
@@ -429,15 +429,15 @@
       <div class="org-person-info">
 
         <span class="org-position">
-          PENOLONG PENGARAH
+          UNIT PENGURUSAN ICT DAN PENTADBIRAN
         </span>
 
         <h4>
-          Pengurusan Infrastruktur ICT
+          En Nidzomuddin bin Ismail
         </h4>
 
         <p>
-          Infrastruktur & Perkhidmatan Teknikal
+          Unit Pengurusan ICT dan Pentadbiran
         </p>
 
       </div>
@@ -454,15 +454,15 @@
       <div class="org-person-info">
 
         <span class="org-position">
-          PENOLONG PENGARAH
+          UNIT APLIKASI DAN PORTAL
         </span>
 
         <h4>
-          Pengurusan Data & Aplikasi
+          Pn Azrina binti Abdul Rahman
         </h4>
 
         <p>
-          Data, Sistem & Aplikasi Digital
+          Unit Aplikasi dan Portal
         </p>
 
       </div>
@@ -479,15 +479,15 @@
       <div class="org-person-info">
 
         <span class="org-position">
-          PENOLONG PENGARAH
+          UNIT TEKNIKAL ICT DAN RANGKAIAN
         </span>
 
         <h4>
-          Tadbir Urus ICT
+          Pn. Ts Norhafizah binti Osman
         </h4>
 
         <p>
-          Tadbir Urus & Keselamatan ICT
+          Unit Teknikal ICT dan Rangkaian
         </p>
 
       </div>
@@ -499,21 +499,36 @@
 
   <!-- BOTTOM INFORMATION -->
 
-  <div class="org-chart-note">
+  <div class="chart-full-view">
 
-    <i data-lucide="info"></i>
+  <button
+    type="button"
+    class="chart-full-view-btn"
+    id="openSpmChart"
+    aria-label="Lihat Carta Organisasi Lengkap Sektor Pengurusan Maklumat"
+  >
 
-    <p>
-      Struktur ini memaparkan pembahagian utama
-      fungsi Sektor Pengurusan Maklumat.
-    </p>
+    <span class="chart-full-view-icon">
+      <i data-lucide="maximize-2"></i>
+    </span>
 
-  </div>
+    <span class="chart-full-view-text">
+      <small>RUJUKAN RASMI</small>
+      <strong>Lihat Carta Organisasi Lengkap</strong>
+    </span>
+
+    <i
+      data-lucide="arrow-up-right"
+      class="chart-full-view-arrow"
+    ></i>
+
+  </button>
+
+</div>
 
 </div>
 
       </div>
-
 
 
       <!-- ================= OBJECTIVE + FUNCTIONS ================= -->
@@ -1169,7 +1184,7 @@
 
 
   <!-- =========================================
-       ZONE 3 - KUALA KETIL
+       ZONE 3 - Baling
   ========================================== -->
 
   <button
@@ -1193,7 +1208,7 @@
       </span>
 
       <h5>
-        Zon Kuala Ketil
+        Daerah Baling
       </h5>
 
 
@@ -1321,6 +1336,20 @@
 
 </section>
 <!-- END ZONE MEMBER PANEL -->
+
+<!-- END DISTRICT TEAM -->
+
+</div>
+
+
+<!-- END TEAM CHART CARD -->
+
+</div>
+
+
+<!-- END PASUKAN TEKNIKAL ICT -->
+
+</section>
 
 
 
@@ -1458,6 +1487,60 @@
 
 
   </main>
+
+<!-- =================================================
+     SPM ORGANIZATION CHART MODAL
+================================================== -->
+
+<div
+  id="spmChartModal"
+  class="spm-chart-modal"
+  aria-hidden="true"
+>
+
+  <div
+    class="spm-chart-modal-backdrop"
+    data-close-spm-chart
+  ></div>
+
+
+  <div class="spm-chart-modal-dialog">
+
+    <div class="spm-chart-modal-header">
+
+      <div>
+        <span>CARTA ORGANISASI</span>
+
+        <h3>
+          Sektor Pengurusan Maklumat
+        </h3>
+      </div>
+
+
+      <button
+        type="button"
+        class="spm-chart-modal-close"
+        data-close-spm-chart
+        aria-label="Tutup carta"
+      >
+        <i data-lucide="x"></i>
+      </button>
+
+    </div>
+
+
+    <div class="spm-chart-modal-body">
+
+      <img
+        src="assets/carta-spm-2026.webp"
+        alt="Carta Organisasi Sektor Pengurusan Maklumat"
+      >
+
+    </div>
+
+  </div>
+
+</div>
 
 <!-- =================================================
      SCHOOL SUPERVISION MODAL
