@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ICT TECH OPS</title>
+
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <!-- Custom CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body class="text-gray-200">
+
+
+    <!-- ==========================================
+         BACKGROUND DATA STREAMS
+    =========================================== -->
+
+    <div class="data-stream" style="left:10%;animation-delay:0s"></div>
+    <div class="data-stream" style="left:25%;animation-delay:2s"></div>
+    <div class="data-stream" style="left:55%;animation-delay:4s"></div>
+    <div class="data-stream" style="left:80%;animation-delay:1s"></div>
+    <div class="data-stream" style="left:92%;animation-delay:3s"></div>
+
+
+
+    <!-- ==========================================
+         MAIN MENU
+    =========================================== -->
+
+    <section
+        id="screen-menu"
+        class="
+            screen
+            active
+            flex-col
+            items-center
+            justify-center
+            p-6
+            text-center
+            w-full
+        "
+    >
+
+        <div
+            class="
+                mb-2
+                mono
+                text-xs
+                tracking-[0.3em]
+                text-cyan-400
+                uppercase
+            "
+        >
+            System Online
+        </div>
+
+
+        <h1
+            class="
+                text-5xl
+                md:text-6xl
+                font-extrabold
+                tracking-tight
+                mb-2
+                tech-title
+            "
+        >
+            ICT TECH OPS
+        </h1>
+
+
+        <p
+            class="
+                mono
+                text-sm
+                text-cyan-300
+                mb-10
+                tracking-widest
+            "
+        >
+            Diagnose • Solve • Secure • Restore
+        </p>
+
+
+        <div
+            class="
+                flex
+                flex-col
+                gap-3
+                w-full
+                max-w-xs
+            "
+        >
+
+            <button
+                onclick="showScreen('screen-timer')"
+                class="
+                    glass
+                    glow-cyan
+                    py-3
+                    px-6
+                    rounded
+                    font-bold
+                    text-cyan-300
+                    hover:text-white
+                    hover:bg-cyan-900/40
+                    transition
+                "
+            >
+                START CHALLENGE
+            </button>
+
+
+            <button
+                onclick="showModal('modal-howto')"
+                class="
+                    glass
+                    py-3
+                    px-6
+                    rounded
+                    font-medium
+                    text-gray-300
+                    hover:text-white
+                    transition
+                "
+            >
+                HOW TO PLAY
+            </button>
+
+
+            <button
+                onclick="showModal('modal-achievements')"
+                class="
+                    glass
+                    py-3
+                    px-6
+                    rounded
+                    font-medium
+                    text-gray-300
+                    hover:text-white
+                    transition
+                "
+            >
+                ACHIEVEMENTS
+            </button>
+
+
+            <button
+                id="btn-audio"
+                onclick="toggleAudio()"
+                class="
+                    glass
+                    py-3
+                    px-6
+                    rounded
+                    font-medium
+                    text-gray-300
+                    hover:text-white
+                    transition
+                "
+            >
+                AUDIO OFF
+            </button>
+
+           <!-- ==========================================
+     RESET PROGRESS
+=========================================== -->
+
+<button
+    onclick="showModal('modal-reset')"
+    class="
+        glass
+        py-3
+        px-6
+        rounded
+        font-medium
+        text-red-400
+        hover:text-red-300
+        hover:bg-red-900/20
+        transition
+    "
+>
+    RESET PROGRESS
+</button> 
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         TIMER SELECTION
+    =========================================== -->
+
+    <section
+        id="screen-timer"
+        class="
+            screen
+            flex-col
+            items-center
+            justify-center
+            p-6
+            text-center
+            w-full
+        "
+    >
+
+        <h2
+            class="
+                text-2xl
+                font-bold
+                text-cyan-300
+                mb-2
+            "
+        >
+            SELECT RESPONSE TIME
+        </h2>
+
+
+        <p
+            class="
+                mono
+                text-xs
+                text-gray-400
+                mb-8
+            "
+        >
+            You must select a response time before proceeding.
+        </p>
+
+
+        <div
+            class="
+                flex
+                flex-col
+                gap-3
+                w-full
+                max-w-sm
+            "
+        >
+
+
+            <button
+                onclick="selectTimer(45)"
+                class="glass timer-card"
+            >
+
+                <span
+                    class="
+                        text-2xl
+                        font-bold
+                        text-cyan-300
+                    "
+                >
+                    45s
+                </span>
+
+                <span class="text-sm text-gray-400 ml-2">
+                    — Analysis Mode
+                </span>
+
+            </button>
+
+
+            <button
+                onclick="selectTimer(30)"
+                class="glass timer-card"
+            >
+
+                <span
+                    class="
+                        text-2xl
+                        font-bold
+                        text-cyan-300
+                    "
+                >
+                    30s
+                </span>
+
+                <span class="text-sm text-gray-400 ml-2">
+                    — Standard Mode
+                </span>
+
+                <span
+                    class="
+                        ml-2
+                        text-xs
+                        bg-cyan-900/60
+                        text-cyan-300
+                        px-2
+                        py-0.5
+                        rounded
+                    "
+                >
+                    RECOMMENDED
+                </span>
+
+            </button>
+
+
+            <button
+                onclick="selectTimer(20)"
+                class="glass timer-card"
+            >
+
+                <span
+                    class="
+                        text-2xl
+                        font-bold
+                        text-amber-400
+                    "
+                >
+                    20s
+                </span>
+
+                <span class="text-sm text-gray-400 ml-2">
+                    — Rapid Response
+                </span>
+
+            </button>
+
+
+            <button
+                onclick="selectTimer(10)"
+                class="glass timer-card"
+            >
+
+                <span
+                    class="
+                        text-2xl
+                        font-bold
+                        text-red-400
+                    "
+                >
+                    10s
+                </span>
+
+                <span class="text-sm text-gray-400 ml-2">
+                    — Expert Mode
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         ICT OPERATIONS CENTER
+    =========================================== -->
+
+    <section
+        id="screen-ops"
+        class="
+            screen
+            flex-col
+            items-center
+            justify-center
+            p-6
+            w-full
+        "
+    >
+
+        <h2
+            class="
+                text-2xl
+                font-bold
+                text-cyan-300
+                mb-6
+            "
+        >
+            ICT OPERATIONS CENTER
+        </h2>
+
+
+        <div
+            id="module-grid"
+            class="
+                grid
+                grid-cols-1
+                sm:grid-cols-2
+                lg:grid-cols-3
+                gap-4
+                w-full
+                max-w-4xl
+            "
+        >
+        </div>
+
+
+        <button
+            onclick="showScreen('screen-menu')"
+            class="
+                mt-8
+                text-sm
+                text-gray-500
+                hover:text-cyan-400
+                transition
+            "
+        >
+            ← Back to Main Menu
+        </button>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         GAME SCREEN
+    =========================================== -->
+
+    <section
+        id="screen-game"
+        class="
+            screen
+            flex-col
+            w-full
+        "
+    >
+
+
+        <!-- HUD -->
+
+        <div
+            class="
+                w-full
+                glass
+                border-0
+                border-b
+                border-cyan-900/30
+                px-4
+                py-2
+                flex
+                flex-wrap
+                items-center
+                gap-4
+                text-xs
+                mono
+            "
+        >
+
+            <span
+                id="hud-module"
+                class="
+                    text-cyan-400
+                    font-bold
+                "
+            >
+                MODULE 01
+            </span>
+
+
+            <span class="text-gray-400">
+                SCORE:
+                <span
+                    id="hud-score"
+                    class="text-cyan-300"
+                >
+                    0
+                </span>
+            </span>
+
+
+            <span class="text-gray-400">
+                HEALTH:
+                <span
+                    id="hud-health"
+                    class="text-green-400"
+                >
+                    100%
+                </span>
+            </span>
+
+
+            <span class="text-gray-400">
+                STREAK:
+                <span
+                    id="hud-streak"
+                    class="text-amber-300"
+                >
+                    0
+                </span>
+            </span>
+
+
+            <span class="text-gray-400">
+                Q:
+                <span
+                    id="hud-progress"
+                    class="text-white"
+                >
+                    1/20
+                </span>
+            </span>
+
+
+            <span
+                class="
+                    ml-auto
+                    text-gray-400
+                "
+            >
+                TIME:
+
+                <span
+                    id="hud-timer"
+                    class="
+                        text-cyan-300
+                        text-base
+                        font-bold
+                    "
+                >
+                    30
+                </span>
+
+            </span>
+
+        </div>
+
+
+
+        <!-- GAME CONTENT -->
+
+        <div
+            class="
+                flex-1
+                flex
+                flex-col
+                items-center
+                justify-center
+                p-4
+                w-full
+                max-w-3xl
+                mx-auto
+            "
+        >
+
+
+            <!-- QUESTION -->
+
+            <div
+                id="question-area"
+                class="
+                    w-full
+                    max-h-full
+                "
+            >
+
+
+                <div
+                    class="
+                        glass
+                        rounded-lg
+                        p-5
+                        mb-3
+                    "
+                >
+
+
+                    <div
+                        class="
+                            flex
+                            flex-wrap
+                            items-center
+                            gap-3
+                            mb-3
+                            mono
+                            text-xs
+                        "
+                    >
+
+                        <span
+                            id="q-incident"
+                            class="text-cyan-400"
+                        >
+                        </span>
+
+
+                        <span
+                            id="q-priority"
+                            class="
+                                px-2
+                                py-0.5
+                                rounded
+                                text-xs
+                                font-bold
+                            "
+                        >
+                        </span>
+
+
+                        <span
+                            id="q-category"
+                            class="text-gray-500"
+                        >
+                        </span>
+
+                    </div>
+
+
+                    <p
+                        id="q-text"
+                        class="
+                            text-base
+                            md:text-lg
+                            text-gray-100
+                            leading-relaxed
+                        "
+                    >
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- ANSWERS -->
+
+                <div
+                    id="q-options"
+                    class="
+                        grid
+                        grid-cols-1
+                        sm:grid-cols-2
+                        gap-2
+                    "
+                >
+                </div>
+
+
+            </div>
+
+
+
+            <!-- FEEDBACK -->
+
+            <div
+                id="feedback-area"
+                class="
+                    w-full
+                    hidden
+                "
+            >
+
+                <div
+                    class="
+                        glass
+                        rounded-lg
+                        p-6
+                        text-center
+                    "
+                >
+
+                    <div
+                        id="fb-verdict"
+                        class="
+                            text-xl
+                            font-bold
+                            mb-3
+                        "
+                    >
+                    </div>
+
+
+                    <div
+                        id="fb-note"
+                        class="
+                            text-sm
+                            text-gray-300
+                            leading-relaxed
+                            mb-4
+                        "
+                    >
+                    </div>
+
+
+                    <button
+                        onclick="nextQuestion()"
+                        class="
+                            bg-cyan-800/50
+                            hover:bg-cyan-700/50
+                            border
+                            border-cyan-600/30
+                            text-cyan-200
+                            font-semibold
+                            py-2
+                            px-8
+                            rounded
+                            transition
+                        "
+                    >
+                        NEXT INCIDENT →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         MODULE COMPLETE
+    =========================================== -->
+
+    <section
+        id="screen-complete"
+        class="
+            screen
+            flex-col
+            items-center
+            justify-center
+            p-6
+            text-center
+            w-full
+        "
+    >
+
+        <div
+            class="
+                glass
+                rounded-xl
+                p-8
+                max-w-md
+                w-full
+            "
+        >
+
+            <div
+                class="
+                    text-green-400
+                    mono
+                    text-xs
+                    tracking-widest
+                    mb-2
+                "
+            >
+                STATUS: RESOLVED
+            </div>
+
+
+            <h2
+                class="
+                    text-2xl
+                    font-bold
+                    text-cyan-300
+                    mb-6
+                "
+            >
+                MODULE COMPLETE
+            </h2>
+
+
+            <div
+                id="summary-stats"
+                class="
+                    text-left
+                    space-y-3
+                    mb-6
+                "
+            >
+            </div>
+
+
+            <button
+                onclick="backToOps()"
+                class="
+                    w-full
+                    bg-cyan-800/50
+                    hover:bg-cyan-700/50
+                    border
+                    border-cyan-600/30
+                    text-cyan-200
+                    font-semibold
+                    py-3
+                    rounded
+                    transition
+                "
+            >
+                RETURN TO OPERATIONS CENTER
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         HOW TO PLAY MODAL
+    =========================================== -->
+
+    <div
+        id="modal-howto"
+        class="
+            fixed
+            inset-0
+            z-50
+            hidden
+            items-center
+            justify-center
+            p-4
+        "
+        style="background:rgba(0,0,0,0.75)"
+    >
+
+        <div
+            class="
+                glass
+                rounded-xl
+                p-6
+                max-w-md
+                w-full
+            "
+        >
+
+            <h3
+                class="
+                    text-xl
+                    font-bold
+                    text-cyan-300
+                    mb-4
+                "
+            >
+                HOW TO PLAY
+            </h3>
+
+
+            <div
+                class="
+                    text-sm
+                    text-gray-300
+                    space-y-2
+                "
+            >
+
+                <p>• Select your response time.</p>
+
+                <p>• Complete modules sequentially.</p>
+
+                <p>• Correct diagnosis = +100 Tech Score.</p>
+
+                <p>• Fast answers may earn bonus points.</p>
+
+                <p>• Wrong answers reduce System Health.</p>
+
+                <p>• Technical explanations are shown after every incident.</p>
+
+            </div>
+
+
+            <button
+                onclick="hideModal('modal-howto')"
+                class="
+                    mt-6
+                    w-full
+                    py-2
+                    rounded
+                    border
+                    border-gray-600
+                    text-gray-300
+                    hover:text-white
+                    transition
+                "
+            >
+                CLOSE
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         ACHIEVEMENTS MODAL
+    =========================================== -->
+
+    <div
+        id="modal-achievements"
+        class="
+            fixed
+            inset-0
+            z-50
+            hidden
+            items-center
+            justify-center
+            p-4
+        "
+        style="background:rgba(0,0,0,0.75)"
+    >
+
+        <div
+            class="
+                glass
+                rounded-xl
+                p-6
+                max-w-md
+                w-full
+            "
+        >
+
+            <h3
+                class="
+                    text-xl
+                    font-bold
+                    text-cyan-300
+                    mb-4
+                "
+            >
+                ACHIEVEMENTS
+            </h3>
+
+
+            <div
+                id="achieve-list"
+                class="
+                    text-sm
+                    text-gray-400
+                    space-y-2
+                "
+            >
+            </div>
+
+
+            <button
+                onclick="hideModal('modal-achievements')"
+                class="
+                    mt-6
+                    w-full
+                    py-2
+                    rounded
+                    border
+                    border-gray-600
+                    text-gray-300
+                    hover:text-white
+                    transition
+                "
+            >
+                CLOSE
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+     RESET PROGRESS MODAL
+=========================================== -->
+
+<div
+    id="modal-reset"
+    class="
+        fixed
+        inset-0
+        z-50
+        hidden
+        items-center
+        justify-center
+        p-4
+    "
+    style="background:rgba(0,0,0,0.78)"
+>
+
+    <div
+        class="
+            glass
+            rounded-xl
+            p-6
+            max-w-md
+            w-full
+            text-center
+        "
+    >
+
+        <div
+            class="
+                mb-3
+                text-red-400
+                text-3xl
+            "
+        >
+            ⚠
+        </div>
+
+
+        <h3
+            class="
+                text-xl
+                font-bold
+                text-red-400
+                mb-3
+            "
+        >
+            RESET ALL PROGRESS?
+        </h3>
+
+
+        <p
+            class="
+                text-sm
+                text-gray-300
+                leading-relaxed
+                mb-2
+            "
+        >
+            This will remove completed modules,
+            best scores and unlocked modules.
+        </p>
+
+
+        <p
+            class="
+                text-xs
+                text-gray-500
+                mono
+                mb-6
+            "
+        >
+            This action cannot be undone.
+        </p>
+
+
+        <div
+            class="
+                grid
+                grid-cols-2
+                gap-3
+            "
+        >
+
+            <button
+                onclick="hideModal('modal-reset')"
+                class="
+                    py-3
+                    rounded
+                    border
+                    border-gray-600
+                    text-gray-300
+                    hover:text-white
+                    hover:border-gray-400
+                    transition
+                "
+            >
+                CANCEL
+            </button>
+
+
+            <button
+                onclick="resetProgress()"
+                class="
+                    py-3
+                    rounded
+                    border
+                    border-red-700/50
+                    bg-red-900/20
+                    text-red-400
+                    hover:bg-red-900/40
+                    hover:text-red-300
+                    transition
+                    font-semibold
+                "
+            >
+                RESET PROGRESS
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- ==========================================
+         QUESTION DATA
+    =========================================== -->
+
+    <script src="js/questions-hardware.js"></script>
+    <script src="js/questions-network.js"></script>
+    <script src="js/questions-system.js"></script>
+    <script src="js/questions-peripherals.js"></script>
+    <script src="js/questions-cybersecurity.js"></script>
+    <script src="js/questions-incident.js"></script>
+
+
+
+    <!-- ==========================================
+         GAME ENGINE
+    =========================================== -->
+
+    <script src="js/audio.js"></script>
+    <script src="js/game.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1104 @@
+/* =========================================================
+   ICT TECH OPS
+   STANDALONE EDITION
+   MAIN STYLESHEET
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #0c1628 0%,
+            #080e1a 45%,
+            #050912 100%
+        );
+
+    font-family:
+        "Fira Sans",
+        sans-serif;
+
+    color: #e5e7eb;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+    position: relative;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+
+/* =========================================================
+   TECH FONT
+========================================================= */
+
+.mono {
+    font-family:
+        "Space Mono",
+        monospace;
+}
+
+
+/* =========================================================
+   SCREEN SYSTEM
+
+   IMPORTANT:
+   Only ONE screen is visible at a time.
+========================================================= */
+
+.screen {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    display: none;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 10, 20, 0.97),
+            rgba(7, 13, 25, 0.99)
+        );
+
+    z-index: 10;
+}
+
+
+/* ACTIVE SCREEN */
+
+.screen.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   TECH GRID BACKGROUND
+========================================================= */
+
+.screen::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0, 229, 255, 0.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0, 229, 255, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        180px 180px;
+
+    z-index: -2;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.screen::after {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 229, 255, 0.04),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.tech-title {
+    color: #00d9ff;
+
+    text-shadow:
+        0 0 8px rgba(0, 217, 255, 0.35),
+        0 0 22px rgba(0, 217, 255, 0.12);
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   GLASS PANEL
+========================================================= */
+
+.glass {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 25, 45, 0.92),
+            rgba(10, 18, 34, 0.94)
+        );
+
+    border:
+        1px solid
+        rgba(0, 217, 255, 0.18);
+
+    box-shadow:
+        0 10px 35px
+        rgba(0, 0, 0, 0.25);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+}
+
+
+/* =========================================================
+   CYAN GLOW
+========================================================= */
+
+.glow-cyan {
+    box-shadow:
+        0 0 0 1px
+        rgba(0, 217, 255, 0.15),
+
+        0 0 18px
+        rgba(0, 217, 255, 0.08);
+}
+
+
+.glow-cyan:hover {
+    border-color:
+        rgba(0, 217, 255, 0.55);
+
+    box-shadow:
+        0 0 0 1px
+        rgba(0, 217, 255, 0.25),
+
+        0 0 25px
+        rgba(0, 217, 255, 0.16);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+    cursor: pointer;
+
+    outline: none;
+
+    user-select: none;
+}
+
+
+button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.35;
+}
+
+
+/* =========================================================
+   TIMER CARDS
+========================================================= */
+
+.timer-card {
+    min-height: 64px;
+
+    padding:
+        12px 22px;
+
+    border-radius:
+        4px;
+
+    text-align:
+        left;
+
+    transition:
+        transform 0.15s ease,
+        border-color 0.15s ease,
+        background 0.15s ease;
+}
+
+
+.timer-card:hover {
+    transform:
+        translateX(4px);
+
+    border-color:
+        rgba(0, 217, 255, 0.5);
+
+    background:
+        rgba(10, 32, 50, 0.95);
+}
+
+
+/* =========================================================
+   MODULE GRID
+========================================================= */
+
+#module-grid {
+    position: relative;
+}
+
+
+/* =========================================================
+   MODULE CARD
+========================================================= */
+
+.module-card {
+    min-height: 120px;
+
+    padding: 18px;
+
+    border-radius: 7px;
+
+    text-align: left;
+
+    transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.module-card.available:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(0, 217, 255, 0.5);
+
+    box-shadow:
+        0 12px 35px
+        rgba(0, 217, 255, 0.08);
+}
+
+
+.module-card.locked {
+    opacity: 0.25;
+
+    cursor: not-allowed;
+}
+
+
+.module-card.complete {
+    border-color:
+        rgba(74, 222, 128, 0.4);
+}
+
+
+/* =========================================================
+   QUESTION OPTIONS
+========================================================= */
+
+.answer-option {
+    width: 100%;
+
+    min-height: 54px;
+
+    padding:
+        12px 14px;
+
+    border-radius:
+        5px;
+
+    text-align:
+        left;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 25, 45, 0.96),
+            rgba(9, 17, 31, 0.96)
+        );
+
+    border:
+        1px solid
+        rgba(0, 217, 255, 0.16);
+
+    color:
+        #d1d5db;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.35;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease;
+}
+
+
+.answer-option:hover {
+    transform:
+        translateY(-1px);
+
+    border-color:
+        rgba(0, 217, 255, 0.45);
+
+    background:
+        rgba(8, 38, 55, 0.96);
+
+    color:
+        #ffffff;
+}
+
+
+/* =========================================================
+   CORRECT ANSWER
+========================================================= */
+
+.answer-option.correct {
+    border-color:
+        rgba(74, 222, 128, 0.75);
+
+    background:
+        rgba(20, 83, 45, 0.45);
+
+    color:
+        #86efac;
+}
+
+
+/* =========================================================
+   WRONG ANSWER
+========================================================= */
+
+.answer-option.wrong {
+    border-color:
+        rgba(248, 113, 113, 0.75);
+
+    background:
+        rgba(127, 29, 29, 0.4);
+
+    color:
+        #fca5a5;
+}
+
+
+/* =========================================================
+   HUD
+========================================================= */
+
+#screen-game > div:first-child {
+    flex-shrink: 0;
+
+    min-height: 38px;
+
+    background:
+        rgba(12, 21, 40, 0.97);
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   QUESTION AREA
+========================================================= */
+
+#question-area {
+    animation:
+        questionEnter
+        0.22s ease;
+}
+
+
+@keyframes questionEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   FEEDBACK
+========================================================= */
+
+#feedback-area {
+    animation:
+        feedbackEnter
+        0.2s ease;
+}
+
+
+@keyframes feedbackEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   PRIORITY BADGES
+========================================================= */
+
+.priority-low {
+    background:
+        rgba(34, 197, 94, 0.15);
+
+    color:
+        #4ade80;
+}
+
+
+.priority-medium {
+    background:
+        rgba(250, 204, 21, 0.15);
+
+    color:
+        #fde047;
+}
+
+
+.priority-high {
+    background:
+        rgba(239, 68, 68, 0.18);
+
+    color:
+        #f87171;
+}
+
+
+/* =========================================================
+   DATA STREAM
+========================================================= */
+
+.data-stream {
+    position: fixed;
+
+    top: -200px;
+
+    width: 1px;
+    height: 160px;
+
+    z-index: 1;
+
+    opacity: 0.25;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 217, 255, 0.6),
+            transparent
+        );
+
+    animation:
+        streamMove
+        9s linear
+        infinite;
+}
+
+
+@keyframes streamMove {
+
+    0% {
+        transform:
+            translateY(-200px);
+    }
+
+    100% {
+        transform:
+            translateY(
+                calc(100vh + 400px)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+[id^="modal-"] {
+    backdrop-filter:
+        blur(7px);
+
+    -webkit-backdrop-filter:
+        blur(7px);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+
+   Only used if very small screen requires it.
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+::-webkit-scrollbar-track {
+    background:
+        #050912;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background:
+        #164e63;
+
+    border-radius:
+        10px;
+}
+
+
+/* =========================================================
+   DESKTOP HEIGHT OPTIMISATION
+
+   Prevents the previous Canva problem where the user
+   had to scroll far down to reach questions.
+========================================================= */
+
+@media
+(max-height: 800px)
+and
+(min-width: 768px) {
+
+    #screen-menu {
+        transform:
+            scale(0.92);
+    }
+
+
+    #screen-timer {
+        transform:
+            scale(0.92);
+    }
+
+
+    #screen-ops {
+        transform:
+            scale(0.92);
+    }
+
+
+    #screen-complete {
+        transform:
+            scale(0.92);
+    }
+
+
+    .module-card {
+        min-height:
+            100px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+========================================================= */
+
+@media
+(max-width: 640px) {
+
+    html,
+    body {
+        overflow:
+            hidden;
+    }
+
+
+    .tech-title {
+        font-size:
+            2.5rem !important;
+    }
+
+
+    #screen-menu,
+    #screen-timer,
+    #screen-ops,
+    #screen-complete {
+
+        padding:
+            18px;
+    }
+
+
+    #screen-ops {
+        overflow-y:
+            auto;
+    }
+
+
+    #module-grid {
+        padding-bottom:
+            30px;
+    }
+
+
+    .module-card {
+        min-height:
+            92px;
+    }
+
+
+    #screen-game {
+        overflow:
+            hidden;
+    }
+
+
+    #screen-game > div:nth-child(2) {
+
+        overflow-y:
+            auto;
+
+        justify-content:
+            flex-start;
+
+        padding-top:
+            16px;
+
+        padding-bottom:
+            16px;
+    }
+
+
+    #q-text {
+        font-size:
+            15px;
+    }
+
+
+    .answer-option {
+        font-size:
+            13px;
+
+        min-height:
+            48px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL HEIGHT DEVICES
+========================================================= */
+
+@media
+(max-height: 620px) {
+
+    #screen-menu,
+    #screen-timer,
+    #screen-ops,
+    #screen-complete {
+
+        overflow-y:
+            auto;
+
+        justify-content:
+            flex-start;
+
+        padding-top:
+            35px;
+
+        padding-bottom:
+            35px;
+    }
+
+
+    #screen-game > div:nth-child(2) {
+
+        overflow-y:
+            auto;
+
+        justify-content:
+            flex-start;
+    }
+
+}
+
+/* =========================================================
+   RESPONSIVE POLISH V2
+   MOBILE + TABLET
+========================================================= */
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media
+(max-width: 900px)
+and
+(min-width: 641px) {
+
+    /* OPERATIONS CENTER */
+
+    #screen-ops {
+        padding:
+            24px;
+    }
+
+
+    #module-grid {
+        gap:
+            14px;
+    }
+
+
+    .module-card {
+        min-height:
+            105px;
+
+        padding:
+            16px;
+    }
+
+
+    /* GAME QUESTION AREA */
+
+    #screen-game > div:nth-child(2) {
+        padding:
+            24px;
+    }
+
+
+    #question-area,
+    #feedback-area {
+        width:
+            min(
+                100%,
+                760px
+            );
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media
+(max-width: 640px) {
+
+    /* -----------------------------------------
+       SCREEN
+    ----------------------------------------- */
+
+    #screen-menu,
+    #screen-timer,
+    #screen-ops,
+    #screen-complete {
+
+        padding:
+            16px;
+    }
+
+
+    /* -----------------------------------------
+       MAIN TITLE
+    ----------------------------------------- */
+
+    .tech-title {
+
+        font-size:
+            2.1rem !important;
+
+        line-height:
+            1.05;
+
+        letter-spacing:
+            -0.5px;
+    }
+
+
+    /* -----------------------------------------
+       TIMER
+    ----------------------------------------- */
+
+    .timer-card {
+
+        min-height:
+            58px;
+
+        padding:
+            10px 16px;
+    }
+
+
+    /* -----------------------------------------
+       OPERATIONS CENTER
+    ----------------------------------------- */
+
+    #screen-ops {
+
+        overflow-y:
+            auto;
+
+        overscroll-behavior:
+            contain;
+    }
+
+
+    #module-grid {
+
+        width:
+            100%;
+
+        gap:
+            10px;
+
+        padding-bottom:
+            24px;
+    }
+
+
+    .module-card {
+
+        min-height:
+            88px;
+
+        padding:
+            14px;
+    }
+
+
+    /* -----------------------------------------
+       GAME HUD
+    ----------------------------------------- */
+
+    #screen-game > div:first-child {
+
+        min-height:
+            44px;
+
+        overflow-x:
+            auto;
+
+        white-space:
+            nowrap;
+
+        scrollbar-width:
+            none;
+    }
+
+
+    #screen-game > div:first-child::-webkit-scrollbar {
+
+        display:
+            none;
+    }
+
+
+    /* -----------------------------------------
+       QUESTION CONTAINER
+    ----------------------------------------- */
+
+    #screen-game > div:nth-child(2) {
+
+        overflow-y:
+            auto;
+
+        overscroll-behavior:
+            contain;
+
+        justify-content:
+            flex-start;
+
+        padding:
+            14px 12px 24px;
+    }
+
+
+    #question-area,
+    #feedback-area {
+
+        width:
+            100%;
+
+        max-width:
+            100%;
+    }
+
+
+    /* -----------------------------------------
+       QUESTION TEXT
+    ----------------------------------------- */
+
+    #q-text {
+
+        font-size:
+            15px;
+
+        line-height:
+            1.45;
+    }
+
+
+    /* -----------------------------------------
+       ANSWER BUTTONS
+    ----------------------------------------- */
+
+    .answer-option {
+
+        min-height:
+            50px;
+
+        padding:
+            11px 12px;
+
+        font-size:
+            13px;
+
+        line-height:
+            1.4;
+    }
+
+
+    /* -----------------------------------------
+       REMOVE DESKTOP HOVER MOVEMENT
+       ON TOUCH DEVICES
+    ----------------------------------------- */
+
+    .module-card.available:hover,
+    .timer-card:hover,
+    .answer-option:hover {
+
+        transform:
+            none;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media
+(max-width: 420px) {
+
+    .tech-title {
+
+        font-size:
+            1.85rem !important;
+    }
+
+
+    .module-card {
+
+        min-height:
+            82px;
+
+        padding:
+            12px;
+    }
+
+
+    .timer-card {
+
+        min-height:
+            54px;
+    }
+
+
+    #q-text {
+
+        font-size:
+            14px;
+    }
+
+
+    .answer-option {
+
+        font-size:
+            12.5px;
+
+        min-height:
+            48px;
+    }
+
+}
