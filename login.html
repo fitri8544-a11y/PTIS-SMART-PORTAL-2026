@@ -49,15 +49,22 @@
   <div class="text-center mb-7">
 
     <div
-      class="
-        w-16 h-16 mx-auto rounded-2xl
-        bg-emerald-700 text-white
-        flex items-center justify-center
-        shadow-lg mb-4
-      "
-    >
-      <i class="fa-solid fa-shield-halved text-2xl"></i>
-    </div>
+  class="
+    w-32 h-32
+    mx-auto
+    flex items-center justify-center
+    mb-3
+  "
+>
+  <img
+    src="assets/logo-ptis.png"
+    alt="Logo PTIS Daerah Baling"
+    class="
+      w-full h-full
+      object-contain
+    "
+  >
+</div>
 
     <p
       class="
@@ -150,6 +157,25 @@
       </span>
 
     </button>
+
+    <!-- AKSES PENTADBIR -->
+
+    <div class="text-center mt-4">
+      <a
+        id="adminAccessLink"
+        href="login.html?next=admin-kad-aku-janji.html"
+        class="
+          inline-flex items-center gap-2
+          text-sm font-semibold
+          text-emerald-700
+          hover:text-emerald-800
+          transition
+        "
+      >
+        <i class="fa-solid fa-user-shield"></i>
+        <span>Akses Pentadbir</span>
+      </a>
+    </div>
 
     <div
       id="loginStatus"
@@ -334,13 +360,56 @@ function showStatus(
 
 
 /* =====================================================
-   REDIRECT KE KAD
+   DESTINASI SELEPAS LOGIN
 ===================================================== */
 
-function bukaKad() {
+/*
+ * Hanya halaman dalaman yang disenaraikan
+ * di sini dibenarkan sebagai destinasi.
+ * Ini mengelakkan open redirect.
+ */
+const allowedNextPages = [
+  "kad-aku-janji.html",
+  "admin-kad-aku-janji.html"
+];
+
+function getNextPage() {
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  const requestedPage =
+    params.get("next");
+
+  if (
+    requestedPage &&
+    allowedNextPages.includes(
+      requestedPage
+    )
+  ) {
+
+    return requestedPage;
+
+  }
+
+  return "kad-aku-janji.html";
+
+}
+
+const nextPage =
+  getNextPage();
+
+
+/* =====================================================
+   REDIRECT SELEPAS LOGIN
+===================================================== */
+
+function bukaDestinasi() {
 
   window.location.replace(
-    "kad-aku-janji.html"
+    nextPage
   );
 
 }
@@ -382,12 +451,12 @@ auth.onAuthStateChanged(
     if (user) {
 
       showStatus(
-        "Sesi aktif ditemui. Membuka rekod Aku Janji...",
+        "Sesi aktif ditemui. Membuka halaman...",
         "success"
       );
 
       setTimeout(
-        bukaKad,
+        bukaDestinasi,
         350
       );
 
@@ -446,7 +515,7 @@ googleLoginBtn.addEventListener(
       );
 
       showStatus(
-        "Log masuk berjaya. Membuka rekod Aku Janji...",
+        "Log masuk berjaya. Membuka halaman...",
         "success"
       );
 
@@ -456,7 +525,7 @@ googleLoginBtn.addEventListener(
        * berdasarkan email pengguna.
        */
       setTimeout(
-        bukaKad,
+        bukaDestinasi,
         500
       );
 

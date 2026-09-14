@@ -185,6 +185,27 @@
       </a>
 
 
+      <!-- PANEL ADMIN - dipaparkan hanya jika datang dari dashboard admin -->
+
+      <a
+        id="adminPanelLink"
+        href="admin-kad-aku-janji.html"
+        class="
+          hidden
+          text-sm
+          font-semibold
+          text-emerald-700
+          hover:text-emerald-800
+          transition
+          whitespace-nowrap
+        "
+        title="Kembali ke Panel Admin"
+      >
+        <i class="fa-solid fa-user-shield mr-1"></i>
+        <span class="hidden sm:inline">Panel Admin</span>
+      </a>
+
+
       <!-- LOG KELUAR -->
 
       <button
@@ -507,28 +528,25 @@
 
 
         <div
-          class="
-            w-12
-            h-12
-            rounded-2xl
-            bg-white/15
-            border
-            border-white/20
-            flex
-            items-center
-            justify-center
-          "
-        >
-
-          <i
-            class="
-              fa-solid
-              fa-shield-halved
-              text-xl
-            "
-          ></i>
-
-        </div>
+  class="
+    w-16
+    h-16
+    flex
+    items-center
+    justify-center
+    shrink-0
+  "
+>
+  <img
+    src="assets/logo-ptis.png"
+    alt="Logo PTIS Daerah Baling"
+    class="
+      w-full
+      h-full
+      object-contain
+    "
+  >
+</div>
 
       </div>
 
@@ -1035,6 +1053,19 @@ const accessDeniedMessage =
 const logoutBtn =
   document.getElementById("logoutBtn");
 
+const adminPanelLink =
+  document.getElementById("adminPanelLink");
+
+const params =
+  new URLSearchParams(window.location.search);
+
+const datangDariAdmin =
+  params.get("from") === "admin";
+
+if (datangDariAdmin) {
+  adminPanelLink.classList.remove("hidden");
+}
+
 const backLoginBtn =
   document.getElementById("backLoginBtn");
 
@@ -1276,7 +1307,9 @@ auth.onAuthStateChanged(
     if (!user) {
 
       window.location.replace(
-        "login.html"
+        datangDariAdmin
+          ? "login.html?next=admin-kad-aku-janji.html"
+          : "login.html"
       );
 
       return;
@@ -1406,7 +1439,9 @@ logoutBtn.addEventListener(
       await auth.signOut();
 
       window.location.replace(
-        "login.html"
+        datangDariAdmin
+          ? "login.html?next=admin-kad-aku-janji.html"
+          : "login.html"
       );
 
     }
