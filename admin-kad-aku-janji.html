@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Kad Aku Janji | PTIS Daerah Baling</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>body{font-family:Arial,Helvetica,sans-serif}</style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<div id="loadingScreen" class="fixed inset-0 bg-slate-50 z-50 flex items-center justify-center">
+  <div class="text-center">
+    <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4"><i class="fa-solid fa-shield-halved text-2xl"></i></div>
+    <h2 class="font-bold">Mengesahkan Pentadbir</h2>
+    <p class="text-sm text-slate-500 mt-1">Sila tunggu sebentar...</p>
+  </div>
+</div>
+
+<div id="accessDenied" class="hidden fixed inset-0 bg-slate-100 z-40 items-center justify-center p-5">
+  <div class="bg-white w-full max-w-md rounded-3xl border border-slate-200 shadow-xl p-8 text-center">
+    <div class="w-16 h-16 mx-auto rounded-full bg-red-100 text-red-600 flex items-center justify-center mb-5"><i class="fa-solid fa-lock text-xl"></i></div>
+    <h2 class="text-xl font-black">Akses Pentadbir Ditolak</h2>
+    <p id="accessDeniedMessage" class="text-sm text-slate-500 leading-relaxed mt-3">Akaun ini tidak mempunyai kebenaran pentadbir.</p>
+    <button id="deniedLogoutBtn" class="w-full mt-6 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl py-3">Log Keluar</button>
+  </div>
+</div>
+
+<div id="adminApp" class="hidden min-h-screen">
+<header class="bg-white border-t-2 border-violet-700 border-b border-slate-200 sticky top-0 z-30">
+  <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div class="w-11 h-11 rounded-xl bg-emerald-700 text-white flex items-center justify-center"><i class="fa-solid fa-shield-halved"></i></div>
+      <div><p class="text-[10px] font-bold tracking-[.15em] uppercase text-emerald-700">PTIS Daerah Baling</p><h1 class="text-base md:text-lg font-black">Pengurusan Kad Aku Janji</h1></div>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-emerald-700"><i class="fa-solid fa-house md:mr-1"></i><span class="hidden md:inline">Portal</span></a>
+      <button id="logoutBtn" class="text-sm font-semibold text-red-600 hover:text-red-700"><i class="fa-solid fa-right-from-bracket md:mr-1"></i><span class="hidden md:inline">Log Keluar</span></button>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-5 py-8">
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+    <div>
+      <span class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full px-4 py-2"><i class="fa-solid fa-user-shield"></i>PANEL PENTADBIR</span>
+      <h2 class="text-2xl md:text-3xl font-black mt-4">Rekod Kad Aku Janji</h2>
+      <p class="text-sm text-slate-500 mt-2">Google Sheet ialah sumber utama. Dashboard ini digunakan untuk semakan dan sync ke Firestore.</p>
+    </div>
+    <button id="importJsonBtn" class="bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl px-5 py-3 shadow-sm"><i class="fa-solid fa-file-import mr-2"></i>Import / Sync JSON</button>
+    <input id="jsonFileInput" type="file" accept=".json,application/json" class="hidden">
+  </div>
+
+  <div class="bg-white border border-slate-200 rounded-2xl p-4 mt-7 flex items-center gap-3">
+    <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center"><i class="fa-solid fa-user-shield"></i></div>
+    <div><p id="adminName" class="font-bold text-sm">Pentadbir</p><p id="adminEmail" class="text-xs text-slate-500">-</p></div>
+  </div>
+
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+    <div class="bg-white border border-slate-200 rounded-2xl p-5"><p class="text-xs font-bold text-slate-500 uppercase">Jumlah Ahli</p><p id="statTotal" class="text-3xl font-black mt-2">0</p></div>
+    <div class="bg-white border border-slate-200 rounded-2xl p-5"><p class="text-xs font-bold text-slate-500 uppercase">Disahkan</p><p id="statVerified" class="text-3xl font-black text-emerald-600 mt-2">0</p></div>
+    <div class="bg-white border border-slate-200 rounded-2xl p-5"><p class="text-xs font-bold text-slate-500 uppercase">Menunggu Pengesahan</p><p id="statWaiting" class="text-3xl font-black text-amber-600 mt-2">0</p></div>
+    <div class="bg-white border border-slate-200 rounded-2xl p-5"><p class="text-xs font-bold text-slate-500 uppercase">Belum Dihantar</p><p id="statNotSent" class="text-3xl font-black text-blue-600 mt-2">0</p></div>
+  </div>
+
+  <div class="bg-white border border-slate-200 rounded-2xl p-4 mt-6">
+    <div class="relative"><i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i><input id="searchInput" type="search" placeholder="Cari nama, email, jawatan, zon atau status..." class="w-full border border-slate-300 rounded-xl pl-11 pr-4 py-3 outline-none focus:ring-2 focus:ring-emerald-500"></div>
+  </div>
+
+  <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden mt-5">
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead class="bg-slate-50"><tr class="text-left text-xs uppercase text-slate-500"><th class="px-5 py-4">Ahli</th><th class="px-5 py-4">Jawatan / Zon</th><th class="px-5 py-4">Status</th><th class="px-5 py-4">Tarikh Hantar</th><th class="px-5 py-4">Tarikh Pengesahan</th><th class="px-5 py-4">No. Pengesahan</th></tr></thead>
+        <tbody id="memberTableBody" class="divide-y divide-slate-100"><tr><td colspan="6" class="px-5 py-10 text-center text-slate-400">Memuatkan rekod...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+</div>
+
+<!-- PREVIEW MODAL -->
+<div id="syncModal" class="hidden fixed inset-0 bg-black/50 z-50 items-center justify-center p-4">
+  <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden">
+    <div class="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
+      <div><p class="text-xs font-bold text-emerald-700 uppercase">Semakan Fail JSON</p><h3 class="text-xl font-black mt-1">Preview Sebelum Sync</h3></div>
+      <button id="closeSyncModal" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="p-6">
+      <div id="fileInfo" class="text-sm text-slate-600 bg-slate-50 rounded-xl p-4 mb-5"></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="border rounded-xl p-4"><p class="text-xs text-slate-500 font-bold">JUMLAH</p><p id="previewTotal" class="text-2xl font-black mt-1">0</p></div>
+        <div class="border rounded-xl p-4"><p class="text-xs text-slate-500 font-bold">DISAHKAN</p><p id="previewVerified" class="text-2xl font-black text-emerald-600 mt-1">0</p></div>
+        <div class="border rounded-xl p-4"><p class="text-xs text-slate-500 font-bold">MENUNGGU</p><p id="previewWaiting" class="text-2xl font-black text-amber-600 mt-1">0</p></div>
+        <div class="border rounded-xl p-4"><p class="text-xs text-slate-500 font-bold">BELUM HANTAR</p><p id="previewNotSent" class="text-2xl font-black text-blue-600 mt-1">0</p></div>
+      </div>
+      <div class="mt-5 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-900"><i class="fa-solid fa-circle-info mr-2"></i>Sync akan mengemas kini <b>direktoriAhli</b> berdasarkan email. Rekod dengan email yang sama akan dikemas kini, bukan diduplikasi.</div>
+      <div class="flex flex-col-reverse sm:flex-row justify-end gap-3 mt-6"><button id="cancelSyncBtn" class="border border-slate-300 rounded-xl px-5 py-3 font-bold">Batal</button><button id="confirmSyncBtn" class="bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl px-5 py-3 font-bold"><i class="fa-solid fa-rotate mr-2"></i>Sync ke Firestore</button></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script>
+const firebaseConfig={apiKey:"AIzaSyDqFDlbPApy48wmP4TctmGL1KCAaDeM0v4",authDomain:"ptisbaling.firebaseapp.com",projectId:"ptisbaling",storageBucket:"ptisbaling.firebasestorage.app",messagingSenderId:"752476432558",appId:"1:752476432558:web:2d2368a6cf0b874e26253f"};
+firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth(); const db=firebase.firestore();
+let members=[]; let pendingPayload=null;
+const $=id=>document.getElementById(id);
+const loadingScreen=$("loadingScreen"),accessDenied=$("accessDenied"),adminApp=$("adminApp"),memberTableBody=$("memberTableBody"),searchInput=$("searchInput"),syncModal=$("syncModal"),jsonFileInput=$("jsonFileInput"),importJsonBtn=$("importJsonBtn"),confirmSyncBtn=$("confirmSyncBtn");
+function esc(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
+function formatDate(v){if(!v)return "-";const m=String(v).match(/^(\d{4})-(\d{2})-(\d{2})$/);if(!m)return v;return new Intl.DateTimeFormat("ms-MY",{day:"numeric",month:"long",year:"numeric"}).format(new Date(Number(m[1]),Number(m[2])-1,Number(m[3])))}
+function getStatus(m){if(m.status)return String(m.status).toUpperCase();if(m.tarikhPengesahan)return "DISAHKAN";if(m.tarikhHantar)return "MENUNGGU PENGESAHAN";return "BELUM DIHANTAR"}
+function statusBadge(status){if(status==="DISAHKAN")return '<span class="inline-flex bg-emerald-100 text-emerald-700 rounded-full px-3 py-1 text-xs font-bold">Disahkan</span>';if(status==="MENUNGGU PENGESAHAN")return '<span class="inline-flex bg-amber-100 text-amber-700 rounded-full px-3 py-1 text-xs font-bold">Menunggu Pengesahan</span>';return '<span class="inline-flex bg-blue-100 text-blue-700 rounded-full px-3 py-1 text-xs font-bold">Belum Dihantar</span>'}
+
+auth.onAuthStateChanged(async user=>{if(!user){location.replace("login.html");return}try{const s=await db.collection("adminPTIS").doc(user.uid).get();if(!s.exists||s.data().aktif!==true){loadingScreen.classList.add("hidden");accessDenied.classList.remove("hidden");accessDenied.classList.add("flex");$("accessDeniedMessage").textContent="Akaun Google ini tidak mempunyai kebenaran sebagai pentadbir.";return}const d=s.data();$("adminName").textContent=d.nama||user.displayName||"Pentadbir";$("adminEmail").textContent=d.email||user.email||"-";loadingScreen.classList.add("hidden");adminApp.classList.remove("hidden");await loadMembers()}catch(e){console.error(e);loadingScreen.classList.add("hidden");accessDenied.classList.remove("hidden");accessDenied.classList.add("flex");$("accessDeniedMessage").textContent="Pengesahan pentadbir tidak dapat dilakukan."}});
+
+async function loadMembers(){try{const s=await db.collection("direktoriAhli").get();members=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.nama||"").localeCompare(b.nama||"","ms"));renderMembers(members);updateStats()}catch(e){console.error(e);memberTableBody.innerHTML='<tr><td colspan="6" class="px-5 py-10 text-center text-red-600">Direktori ahli tidak dapat dimuatkan.</td></tr>'}}
+function renderMembers(list){if(!list.length){memberTableBody.innerHTML='<tr><td colspan="6" class="px-5 py-10 text-center text-slate-400">Tiada rekod ditemui.</td></tr>';return}memberTableBody.innerHTML=list.map(m=>{const s=getStatus(m);return `<tr class="hover:bg-slate-50"><td class="px-5 py-4"><p class="font-bold">${esc(m.nama||"-")}</p><p class="text-xs text-slate-500 mt-1">${esc(m.email||"-")}</p></td><td class="px-5 py-4"><p>${esc(m.jawatan||"-")}</p><p class="text-xs text-slate-500 mt-1">${esc(m.zon||"-")}</p></td><td class="px-5 py-4">${statusBadge(s)}</td><td class="px-5 py-4">${esc(formatDate(m.tarikhHantar))}</td><td class="px-5 py-4">${esc(formatDate(m.tarikhPengesahan))}</td><td class="px-5 py-4 font-mono text-xs">${esc(m.noPengesahan||"-")}</td></tr>`}).join("")}
+function updateStats(){const statuses=members.map(getStatus);$("statTotal").textContent=members.length;$("statVerified").textContent=statuses.filter(s=>s==="DISAHKAN").length;$("statWaiting").textContent=statuses.filter(s=>s==="MENUNGGU PENGESAHAN").length;$("statNotSent").textContent=statuses.filter(s=>s==="BELUM DIHANTAR").length}
+searchInput.addEventListener("input",()=>{const q=searchInput.value.trim().toLowerCase();if(!q){renderMembers(members);return}renderMembers(members.filter(m=>[m.nama,m.email,m.jawatan,m.zon,getStatus(m),m.noPengesahan].join(" ").toLowerCase().includes(q)))})
+
+importJsonBtn.addEventListener("click",()=>jsonFileInput.click());
+jsonFileInput.addEventListener("change",async e=>{const file=e.target.files[0];if(!file)return;try{const payload=JSON.parse(await file.text());if(!payload||payload.versi!==2||payload.jenis!=="Direktori Aku Janji"||!Array.isArray(payload.ahli))throw new Error("Fail ini bukan JSON Direktori Aku Janji versi 2.");const valid=payload.ahli.filter(x=>x&&typeof x.email==="string"&&x.email.trim());if(valid.length!==payload.ahli.length)throw new Error("Terdapat rekod tanpa email yang sah.");const emails=valid.map(x=>x.email.trim().toLowerCase());if(new Set(emails).size!==emails.length)throw new Error("Terdapat email pendua dalam fail JSON.");pendingPayload={...payload,ahli:valid};const statuses=valid.map(getStatus);$("previewTotal").textContent=valid.length;$("previewVerified").textContent=statuses.filter(s=>s==="DISAHKAN").length;$("previewWaiting").textContent=statuses.filter(s=>s==="MENUNGGU PENGESAHAN").length;$("previewNotSent").textContent=statuses.filter(s=>s==="BELUM DIHANTAR").length;$("fileInfo").innerHTML=`<b>${esc(file.name)}</b><br>Versi: ${esc(payload.versi)} &nbsp;•&nbsp; Dijana: ${esc(payload.dijanaPada||"-")}`;syncModal.classList.remove("hidden");syncModal.classList.add("flex")}catch(err){console.error(err);alert("Fail tidak dapat digunakan.\n\n"+(err.message||"Format JSON tidak sah."));jsonFileInput.value=""}})
+function closeSync(){syncModal.classList.add("hidden");syncModal.classList.remove("flex");pendingPayload=null;jsonFileInput.value=""}
+$("closeSyncModal").addEventListener("click",closeSync);$("cancelSyncBtn").addEventListener("click",closeSync);
+confirmSyncBtn.addEventListener("click",async()=>{if(!pendingPayload)return;try{confirmSyncBtn.disabled=true;confirmSyncBtn.innerHTML='<i class="fa-solid fa-spinner fa-spin mr-2"></i>Sync sedang dijalankan...';let batch=db.batch(),count=0,total=0;for(const item of pendingPayload.ahli){const email=item.email.trim().toLowerCase();const status=getStatus(item);const data={nama:String(item.nama||"").trim(),email,jawatan:String(item.jawatan||"").trim(),zon:String(item.zon||"").trim(),tarikhHantar:String(item.tarikhHantar||"").trim(),tarikhPengesahan:String(item.tarikhPengesahan||"").trim(),noPengesahan:String(item.noPengesahan||"").trim(),status,statusAkuJanji:status==="DISAHKAN",aktif:item.aktif!==false,dikemaskiniPada:firebase.firestore.FieldValue.serverTimestamp()};batch.set(db.collection("direktoriAhli").doc(email),data,{merge:true});count++;total++;if(count>=400){await batch.commit();batch=db.batch();count=0}}if(count)await batch.commit();closeSync();await loadMembers();alert(`Sync berjaya.\n\nJumlah rekod dikemas kini: ${total}`)}catch(err){console.error(err);alert("Sync gagal.\n\n"+(err.message||"Sila cuba semula."))}finally{confirmSyncBtn.disabled=false;confirmSyncBtn.innerHTML='<i class="fa-solid fa-rotate mr-2"></i>Sync ke Firestore'}})
+async function logout(){try{await auth.signOut()}finally{location.replace("login.html")}}$("logoutBtn").addEventListener("click",logout);$("deniedLogoutBtn").addEventListener("click",logout);
+</script>
+</body>
+</html>

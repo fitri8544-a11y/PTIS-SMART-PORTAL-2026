@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Kad Aku Janji | PTIS Daerah Baling</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .digital-card {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255,255,255,.18),
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          #064e3b 0%,
+          #047857 48%,
+          #065f46 100%
+        );
+    }
+
+    .digital-card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      right: -100px;
+      top: -110px;
+    }
+
+    .digital-card::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 50%;
+      left: -90px;
+      bottom: -100px;
+    }
+
+    .status-pulse {
+      animation: pulseStatus 2s infinite;
+    }
+
+    @keyframes pulseStatus {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(34,197,94,.35);
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(34,197,94,0);
+      }
+    }
+
+    /* Status-specific card variants */
+    .digital-card.status-waiting {
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 35%),
+        linear-gradient(145deg, #78350f 0%, #b45309 48%, #92400e 100%);
+    }
+
+    .digital-card.status-pending {
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 35%),
+        linear-gradient(145deg, #1e3a8a 0%, #1d4ed8 48%, #1e40af 100%);
+    }
+
+    .status-panel {
+      border-radius: 1.5rem;
+    }
+
+  </style>
+</head>
+
+
+<body class="bg-slate-100 min-h-screen">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="bg-white border-b border-slate-200">
+
+  <div
+    class="
+      max-w-6xl
+      mx-auto
+      px-5
+      py-4
+      flex
+      items-center
+      justify-between
+      gap-4
+    "
+  >
+
+    <!-- ================= BRAND ================= -->
+
+    <div>
+
+      <p
+        class="
+          text-xs
+          font-bold
+          tracking-widest
+          text-emerald-700
+          uppercase
+        "
+      >
+        Portal Rasmi
+      </p>
+
+      <h1
+        class="
+          text-lg
+          md:text-xl
+          font-bold
+          text-slate-800
+        "
+      >
+        PTIS Daerah Baling
+      </h1>
+
+    </div>
+
+
+    <!-- ================= ACTIONS ================= -->
+
+    <div
+      class="
+        flex
+        items-center
+        gap-3
+        md:gap-5
+      "
+    >
+
+      <!-- PORTAL -->
+
+      <a
+        href="index.html"
+        class="
+          text-sm
+          font-semibold
+          text-slate-600
+          hover:text-emerald-700
+          transition
+          whitespace-nowrap
+        "
+        title="Kembali ke Portal"
+      >
+
+        <i class="fa-solid fa-house mr-1"></i>
+
+        <span class="hidden sm:inline">
+          Portal
+        </span>
+
+      </a>
+
+
+      <!-- LOG KELUAR -->
+
+      <button
+        id="logoutBtn"
+        type="button"
+        class="
+          hidden
+          items-center
+          gap-1
+          text-sm
+          font-semibold
+          text-red-600
+          hover:text-red-700
+          transition
+          whitespace-nowrap
+        "
+        title="Log Keluar"
+      >
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        <span class="hidden sm:inline">
+          Log Keluar
+        </span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =====================================================
+     AUTH LOADING
+===================================================== -->
+
+<div
+  id="authLoading"
+  class="
+    min-h-[70vh]
+    flex
+    items-center
+    justify-center
+    px-5
+  "
+>
+
+  <div class="text-center">
+
+    <div
+      class="
+        w-14
+        h-14
+        mx-auto
+        rounded-2xl
+        bg-emerald-100
+        text-emerald-700
+        flex
+        items-center
+        justify-center
+        mb-4
+      "
+    >
+      <i class="fa-solid fa-shield-halved text-xl"></i>
+    </div>
+
+    <h2
+      class="
+        font-bold
+        text-slate-800
+      "
+    >
+      Mengesahkan Akaun
+    </h2>
+
+    <p
+      class="
+        text-sm
+        text-slate-500
+        mt-1
+      "
+    >
+      Sila tunggu sebentar...
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     ACCESS DENIED
+===================================================== -->
+
+<div
+  id="accessDenied"
+  class="
+    hidden
+    min-h-[70vh]
+    items-center
+    justify-center
+    px-5
+  "
+>
+
+  <div
+    class="
+      w-full
+      max-w-md
+      bg-white
+      border
+      border-slate-200
+      rounded-3xl
+      shadow-xl
+      p-7
+      text-center
+    "
+  >
+
+    <div
+      class="
+        w-16
+        h-16
+        mx-auto
+        rounded-full
+        bg-red-100
+        text-red-600
+        flex
+        items-center
+        justify-center
+        mb-5
+      "
+    >
+      <i class="fa-solid fa-lock text-xl"></i>
+    </div>
+
+
+    <h2
+      class="
+        text-xl
+        font-black
+        text-slate-800
+      "
+    >
+      Akses Tidak Dibenarkan
+    </h2>
+
+
+    <p
+      id="accessDeniedMessage"
+      class="
+        text-sm
+        leading-relaxed
+        text-slate-500
+        mt-3
+        whitespace-pre-line
+      "
+    >
+      Akaun Google ini belum didaftarkan sebagai
+      ahli PTIS Daerah Baling.
+    </p>
+
+
+    <button
+      id="backLoginBtn"
+      type="button"
+      class="
+        w-full
+        mt-6
+        bg-emerald-700
+        hover:bg-emerald-800
+        text-white
+        font-bold
+        rounded-xl
+        px-5
+        py-3
+        transition
+      "
+    >
+      <i class="fa-solid fa-arrow-left mr-2"></i>
+      Kembali ke Log Masuk
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     PAGE
+===================================================== -->
+
+<main
+  id="mainContent"
+  class="
+    hidden
+    max-w-6xl
+    mx-auto
+    px-5
+    py-10
+  "
+>
+
+
+  <!-- PAGE TITLE -->
+
+  <div class="text-center mb-8">
+
+    <span
+      class="
+        inline-flex
+        items-center
+        gap-2
+        bg-emerald-100
+        text-emerald-800
+        text-xs
+        font-bold
+        px-4
+        py-2
+        rounded-full
+        mb-4
+      "
+    >
+
+      <i class="fa-solid fa-shield-halved"></i>
+
+      REKOD AKU JANJI DIGITAL
+
+    </span>
+
+
+    <h2
+      class="
+        text-2xl
+        md:text-3xl
+        font-black
+        text-slate-900
+      "
+    >
+      Kad Aku Janji
+    </h2>
+
+
+    <p
+      class="
+        text-slate-500
+        mt-2
+        max-w-xl
+        mx-auto
+        text-sm
+      "
+    >
+      Kepatuhan Polisi Perlindungan Murid
+    </p>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       DIGITAL CARD
+  ====================================================== -->
+
+  <div class="max-w-md mx-auto">
+
+
+    <div
+      id="kadAkuJanji"
+      class="
+        digital-card
+        rounded-3xl
+        shadow-2xl
+        text-white
+        p-6
+        md:p-7
+      "
+    >
+
+
+      <!-- CARD HEADER -->
+
+      <div
+        class="
+          relative
+          z-10
+          flex
+          items-start
+          justify-between
+          gap-4
+        "
+      >
+
+        <div>
+
+          <p
+            class="
+              text-[10px]
+              tracking-[.18em]
+              font-bold
+              text-emerald-100
+              uppercase
+            "
+          >
+            Pasukan Teknikal ICT Sekolah
+          </p>
+
+          <h3
+            class="
+              text-lg
+              font-black
+              mt-1
+            "
+          >
+            DAERAH BALING
+          </h3>
+
+        </div>
+
+
+        <div
+          class="
+            w-12
+            h-12
+            rounded-2xl
+            bg-white/15
+            border
+            border-white/20
+            flex
+            items-center
+            justify-center
+          "
+        >
+
+          <i
+            class="
+              fa-solid
+              fa-shield-halved
+              text-xl
+            "
+          ></i>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- DIVIDER -->
+
+      <div
+        class="
+          relative
+          z-10
+          border-t
+          border-white/20
+          my-5
+        "
+      ></div>
+
+
+
+      <!-- TITLE -->
+
+      <div class="relative z-10">
+
+        <p
+          class="
+            text-xs
+            font-semibold
+            text-emerald-100
+          "
+        >
+          <span id="jenisKad">STATUS AKU JANJI DIGITAL</span>
+        </p>
+
+        <h4
+          class="
+            text-xl
+            font-black
+            leading-tight
+            mt-1
+          "
+        >
+          AKU JANJI KEPATUHAN
+        </h4>
+
+        <p
+          class="
+            text-sm
+            text-emerald-100
+            mt-1
+          "
+        >
+          Polisi Perlindungan Murid
+        </p>
+
+      </div>
+
+
+
+      <!-- USER -->
+
+      <div
+        class="
+          relative
+          z-10
+          bg-white/10
+          border
+          border-white/15
+          rounded-2xl
+          p-4
+          mt-6
+        "
+      >
+
+        <p
+          class="
+            text-[10px]
+            uppercase
+            tracking-wider
+            text-emerald-100
+            mb-1
+          "
+        >
+          Nama Pemegang
+        </p>
+
+
+        <!-- DATA CONTOH -->
+
+        <h5
+          id="namaPemegang"
+          class="
+            text-base
+            font-black
+            uppercase
+          "
+        >
+          MUHAMED FITRI BIN MOHAMED EUSOP
+        </h5>
+
+
+        <p
+          id="jawatanPemegang"
+          class="
+            text-xs
+            text-emerald-100
+            mt-1
+          "
+        >
+          Penolong Pegawai Teknologi Maklumat
+        </p>
+
+        <p
+          id="zonPemegang"
+          class="
+            text-[11px]
+            text-emerald-100
+            mt-1
+            uppercase
+          "
+        >
+          KUALA KETIL
+        </p>
+
+      </div>
+
+
+
+      <!-- STATUS -->
+
+      <div
+        class="
+          relative
+          z-10
+          flex
+          items-center
+          gap-3
+          mt-5
+        "
+      >
+
+        <div
+          id="statusIconWrap"
+          class="
+            status-pulse
+            w-10
+            h-10
+            rounded-full
+            bg-green-400
+            text-green-950
+            flex
+            items-center
+            justify-center
+            shrink-0
+          "
+        >
+
+          <i
+            id="statusIcon"
+            class="fa-solid fa-check"
+          ></i>
+
+        </div>
+
+
+        <div>
+
+          <p
+            class="
+              text-[10px]
+              text-emerald-100
+              uppercase
+              tracking-wider
+            "
+          >
+            Status Rekod
+          </p>
+
+          <p
+            id="statusRekod"
+            class="
+              font-black
+              text-green-300
+            "
+          >
+            TELAH DISAHKAN
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- INFORMATION -->
+
+      <div
+        class="
+          relative
+          z-10
+          grid
+          grid-cols-2
+          gap-3
+          mt-5
+        "
+      >
+
+        <div>
+
+          <p
+            class="
+              text-[10px]
+              text-emerald-100
+              uppercase
+            "
+          >
+            <span id="labelTarikhUtama">Tarikh Pengesahan</span>
+          </p>
+
+          <p
+            id="tarikhUtama"
+            class="
+              text-sm
+              font-bold
+              mt-1
+            "
+          >
+            14 September 2026
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <p
+            class="
+              text-[10px]
+              text-emerald-100
+              uppercase
+            "
+          >
+            No. Pengesahan
+          </p>
+
+          <p
+            id="noPengesahan"
+            class="
+              text-sm
+              font-bold
+              mt-1
+            "
+          >
+            PTIS-PPM-2026-0001
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- FOOTER CARD -->
+
+      <div
+        class="
+          relative
+          z-10
+          border-t
+          border-white/20
+          mt-6
+          pt-4
+        "
+      >
+
+        <p
+          id="teksKad"
+          class="
+            text-[10px]
+            leading-relaxed
+            text-emerald-100
+          "
+        >
+          Status rekod Aku Janji akan dipaparkan berdasarkan
+          data semasa yang direkodkan oleh PTIS Daerah Baling.
+        </p>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         INFORMATION BELOW CARD
+    ====================================================== -->
+
+    <div
+      class="
+        bg-white
+        rounded-2xl
+        border
+        border-slate-200
+        shadow-sm
+        p-5
+        mt-5
+      "
+    >
+
+      <div class="flex gap-3">
+
+        <div
+          class="
+            w-9
+            h-9
+            rounded-xl
+            bg-blue-100
+            text-blue-700
+            flex
+            items-center
+            justify-center
+            shrink-0
+          "
+        >
+
+          <i class="fa-solid fa-circle-info"></i>
+
+        </div>
+
+
+        <div>
+
+          <h6
+            class="
+              font-bold
+              text-slate-800
+              text-sm
+            "
+          >
+            Mengenai kad ini
+          </h6>
+
+          <p
+            class="
+              text-xs
+              leading-relaxed
+              text-slate-500
+              mt-1
+            "
+          >
+            Paparan ini ialah rekod digital status Aku Janji ahli PTIS.
+            Ia tidak menggantikan dokumen asal dan tidak dianggap sebagai
+            pengesahan rasmi selagi status belum bertukar kepada DISAHKAN.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer
+  class="
+    text-center
+    text-xs
+    text-slate-400
+    py-8
+    px-5
+  "
+>
+
+  © 2026 Pasukan Teknikal ICT Sekolah Daerah Baling
+
+</footer>
+
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+
+
+<script>
+
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
+
+const firebaseConfig = {
+
+  apiKey:
+    "AIzaSyDqFDlbPApy48wmP4TctmGL1KCAaDeM0v4",
+
+  authDomain:
+    "ptisbaling.firebaseapp.com",
+
+  projectId:
+    "ptisbaling",
+
+  storageBucket:
+    "ptisbaling.firebasestorage.app",
+
+  messagingSenderId:
+    "752476432558",
+
+  appId:
+    "1:752476432558:web:2d2368a6cf0b874e26253f"
+
+};
+
+
+/* =====================================================
+   INITIALIZE FIREBASE
+===================================================== */
+
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+
+
+/* =====================================================
+   FORMAT TARIKH
+===================================================== */
+
+function formatTarikh(tarikh) {
+
+  if (!tarikh) {
+    return "-";
+  }
+
+  const bulan = [
+    "Januari",
+    "Februari",
+    "Mac",
+    "April",
+    "Mei",
+    "Jun",
+    "Julai",
+    "Ogos",
+    "September",
+    "Oktober",
+    "November",
+    "Disember"
+  ];
+
+  const bahagian =
+    tarikh.split("-");
+
+  if (bahagian.length !== 3) {
+    return tarikh;
+  }
+
+  const tahun =
+    bahagian[0];
+
+  const nomborBulan =
+    parseInt(bahagian[1], 10);
+
+  const hari =
+    parseInt(bahagian[2], 10);
+
+  return (
+    hari +
+    " " +
+    bulan[nomborBulan - 1] +
+    " " +
+    tahun
+  );
+
+}
+
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const authLoading =
+  document.getElementById("authLoading");
+
+const mainContent =
+  document.getElementById("mainContent");
+
+const accessDenied =
+  document.getElementById("accessDenied");
+
+const accessDeniedMessage =
+  document.getElementById("accessDeniedMessage");
+
+const logoutBtn =
+  document.getElementById("logoutBtn");
+
+const backLoginBtn =
+  document.getElementById("backLoginBtn");
+
+const kadAkuJanji =
+  document.getElementById("kadAkuJanji");
+
+const namaPemegang =
+  document.getElementById("namaPemegang");
+
+const jawatanPemegang =
+  document.getElementById("jawatanPemegang");
+
+const zonPemegang =
+  document.getElementById("zonPemegang");
+
+const statusRekod =
+  document.getElementById("statusRekod");
+
+const statusIconWrap =
+  document.getElementById("statusIconWrap");
+
+const statusIcon =
+  document.getElementById("statusIcon");
+
+const jenisKad =
+  document.getElementById("jenisKad");
+
+const labelTarikhUtama =
+  document.getElementById("labelTarikhUtama");
+
+const tarikhUtama =
+  document.getElementById("tarikhUtama");
+
+const noPengesahan =
+  document.getElementById("noPengesahan");
+
+const teksKad =
+  document.getElementById("teksKad");
+
+
+/* =====================================================
+   PAPAR AKSES DITOLAK
+===================================================== */
+
+function showAccessDenied(message) {
+
+  // Sembunyikan loading
+  authLoading.classList.add("hidden");
+  authLoading.classList.remove("flex");
+
+  // Sembunyikan kad
+  mainContent.classList.add("hidden");
+
+  // Sembunyikan logout
+  logoutBtn.classList.add("hidden");
+  logoutBtn.classList.remove("flex");
+
+  // Masukkan mesej
+  accessDeniedMessage.textContent =
+    message;
+
+  // Paparkan panel akses ditolak
+  accessDenied.classList.remove("hidden");
+  accessDenied.classList.add("flex");
+}
+
+
+/* =====================================================
+   PAPAR KAD
+===================================================== */
+
+function showCard() {
+
+  // Loading selesai
+  authLoading.classList.add("hidden");
+  authLoading.classList.remove("flex");
+
+  // Sembunyikan akses ditolak
+  accessDenied.classList.add("hidden");
+  accessDenied.classList.remove("flex");
+
+  // Paparkan kad
+  mainContent.classList.remove("hidden");
+
+  // Paparkan logout
+  logoutBtn.classList.remove("hidden");
+  logoutBtn.classList.add("flex");
+}
+
+
+/* =====================================================
+   PAPAR STATUS REKOD
+===================================================== */
+
+function renderStatus(data) {
+
+  const status =
+    (data.status || "").trim().toUpperCase();
+
+  namaPemegang.textContent =
+    data.nama || "-";
+
+  jawatanPemegang.textContent =
+    data.jawatan || "-";
+
+  zonPemegang.textContent =
+    data.zon || "-";
+
+  kadAkuJanji.classList.remove(
+    "status-waiting",
+    "status-pending"
+  );
+
+  /*
+   * DISAHKAN
+   */
+  if (status === "DISAHKAN") {
+
+    jenisKad.textContent =
+      "KAD PENGESAHAN DIGITAL";
+
+    statusRekod.textContent =
+      "TELAH DISAHKAN";
+
+    statusRekod.className =
+      "font-black text-green-300";
+
+    statusIconWrap.className =
+      "status-pulse w-10 h-10 rounded-full bg-green-400 text-green-950 flex items-center justify-center shrink-0";
+
+    statusIcon.className =
+      "fa-solid fa-check";
+
+    labelTarikhUtama.textContent =
+      "Tarikh Pengesahan";
+
+    tarikhUtama.textContent =
+      formatTarikh(data.tarikhPengesahan);
+
+    noPengesahan.textContent =
+      data.noPengesahan || "-";
+
+    teksKad.textContent =
+      "Rekod Aku Janji pemegang ini telah berstatus DISAHKAN. " +
+      "Paparan digital ini tidak menggantikan dokumen asal.";
+
+    return;
+  }
+
+  /*
+   * MENUNGGU PENGESAHAN
+   */
+  if (status === "MENUNGGU PENGESAHAN") {
+
+    kadAkuJanji.classList.add(
+      "status-waiting"
+    );
+
+    jenisKad.textContent =
+      "STATUS AKU JANJI DIGITAL";
+
+    statusRekod.textContent =
+      "MENUNGGU PENGESAHAN";
+
+    statusRekod.className =
+      "font-black text-amber-200";
+
+    statusIconWrap.className =
+      "w-10 h-10 rounded-full bg-amber-300 text-amber-950 flex items-center justify-center shrink-0";
+
+    statusIcon.className =
+      "fa-solid fa-clock";
+
+    labelTarikhUtama.textContent =
+      "Tarikh Hantar Borang";
+
+    tarikhUtama.textContent =
+      formatTarikh(data.tarikhHantar);
+
+    noPengesahan.textContent =
+      "-";
+
+    teksKad.textContent =
+      "Borang Aku Janji telah direkodkan sebagai dihantar pada " +
+      formatTarikh(data.tarikhHantar) +
+      ". Pengesahan rasmi masih belum direkodkan.";
+
+    return;
+  }
+
+  /*
+   * BELUM DIHANTAR / STATUS LAIN
+   */
+  kadAkuJanji.classList.add(
+    "status-pending"
+  );
+
+  jenisKad.textContent =
+    "STATUS AKU JANJI DIGITAL";
+
+  statusRekod.textContent =
+    "BELUM DIHANTAR";
+
+  statusRekod.className =
+    "font-black text-blue-200";
+
+  statusIconWrap.className =
+    "w-10 h-10 rounded-full bg-blue-300 text-blue-950 flex items-center justify-center shrink-0";
+
+  statusIcon.className =
+    "fa-solid fa-file-circle-xmark";
+
+  labelTarikhUtama.textContent =
+    "Tarikh Hantar Borang";
+
+  tarikhUtama.textContent =
+    "-";
+
+  noPengesahan.textContent =
+    "-";
+
+  teksKad.textContent =
+    "Belum ada rekod penghantaran Surat Aku Janji " +
+    "Kepatuhan Polisi Perlindungan Murid untuk pemegang ini.";
+}
+
+
+/* =====================================================
+   AUTH CHECK
+===================================================== */
+
+auth.onAuthStateChanged(
+  async (user) => {
+
+    // ==========================================
+    // BELUM LOGIN
+    // ==========================================
+
+    if (!user) {
+
+      window.location.replace(
+        "login.html"
+      );
+
+      return;
+    }
+
+
+    try {
+
+      // ========================================
+      // AMBIL REKOD AHLI BERDASARKAN UID
+      // ========================================
+
+      const email =
+  (user.email || "")
+    .trim()
+    .toLowerCase();
+
+if (!email) {
+
+  showAccessDenied(
+    "Email akaun Google tidak dapat dikenal pasti."
+  );
+
+  return;
+}
+
+
+/* =====================================================
+   CARI AHLI BERDASARKAN EMAIL GOOGLE
+===================================================== */
+
+const docSnap =
+  await db
+    .collection("direktoriAhli")
+    .doc(email)
+    .get();
+
+
+      // ========================================
+      // BUKAN AHLI BERDAFTAR
+      // ========================================
+
+      if (!docSnap.exists) {
+
+        showAccessDenied(
+            "Akaun Google ini belum didaftarkan sebagai " +
+            "ahli PTIS Daerah Baling.\n\n" +
+
+            "Nama: " +
+            (user.displayName || "-") +
+            "\n" +
+
+            "Email: " +
+            (user.email || "-") +
+            "\n" +
+
+            "UID: " +
+            user.uid
+        );
+
+        return;
+      }
+
+
+      const data =
+        docSnap.data();
+
+
+      // ========================================
+      // AKAUN TIDAK AKTIF
+      // ========================================
+
+      if (data.aktif !== true) {
+
+        showAccessDenied(
+          "Akaun ini tidak aktif. " +
+          "Sila hubungi pentadbir PTIS Daerah Baling."
+        );
+
+        return;
+      }
+
+      // ========================================
+      // PAPARKAN STATUS SEMASA AKU JANJI
+      // ========================================
+      renderStatus(data);
+
+      showCard();
+
+
+      console.log(
+        "Status Aku Janji dimuatkan:",
+        user.uid
+      );
+
+    }
+
+    catch (error) {
+
+      console.error(
+        "Ralat Firestore:",
+        error
+      );
+
+
+      showAccessDenied(
+        "Rekod Kad Aku Janji tidak dapat " +
+        "dimuatkan. Sila cuba semula."
+      );
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   LOG KELUAR
+===================================================== */
+
+logoutBtn.addEventListener(
+  "click",
+  async () => {
+
+    try {
+
+      await auth.signOut();
+
+      window.location.replace(
+        "login.html"
+      );
+
+    }
+
+    catch (error) {
+
+      console.error(
+        "Ralat log keluar:",
+        error
+      );
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   KEMBALI KE LOGIN
+===================================================== */
+
+backLoginBtn.addEventListener(
+  "click",
+  async () => {
+
+    try {
+
+      /*
+       * Logout dahulu supaya pengguna
+       * boleh memilih akaun Google lain.
+       */
+
+      await auth.signOut();
+
+    }
+
+    catch (error) {
+
+      console.error(
+        "Ralat sign out:",
+        error
+      );
+
+    }
+
+
+    window.location.replace(
+      "login.html"
+    );
+
+  }
+);
+
+</script>
+
+</body>
+</html>
